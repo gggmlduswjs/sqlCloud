@@ -8,7 +8,7 @@ create table member_tbl_11(
  m_point  number(6) ,
  m_grade varchar2(2) 
 );
- commit;
+commit;
 
 insert into member_tbl_11 values ('m100' , '1234' , '성기훈', '010-1111-2222' , '2004-01-01' , 100,  '01');
  insert into member_tbl_11 values ('m101' , '4444' , '김상우', '010-2222-3333' , '2004-01-01' , 1500, '01');
@@ -23,7 +23,7 @@ insert into member_tbl_11 values ('m100' , '1234' , '성기훈', '010-1111-2222'
 values ('m109' , '0448' , '박해수', '010-7878-1111' , '2004-11-27' );
  insert into member_tbl_11 ( m_id, m_pw, m_name , m_tel , m_birthday) 
 values ('m110' , '4848' , '위하준', '010-8888-9090' , '2004-11-09');
- commit;
+commit;
 
 
 --단일행함수 
@@ -105,7 +105,7 @@ values ('m110' , '4848' , '위하준', '010-8888-9090' , '2004-11-09');
    
    --null 처리하는 함수  nvl(), nvl2()  
    
-   select * from member_tbl_ll;
+   select * from member_tbl_11;
    
    -- 포인트를 100인상하는 조회하기 
    -- null이면 0으로 처리하겠다   nvl() 함수
