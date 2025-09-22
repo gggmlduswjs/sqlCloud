@@ -13,6 +13,7 @@ SQL developer 설치
 구조화된 질의언어 (SQL 사용하기)
 
 SELECT로 원하는 데이터 조회하기
+
 단일행함수 익히기
 문자관련함수 :  INITCAP, LOWER, UPPER, LENGTH, CONCAT, SUBSTR, INSTR, LPAD, RPAD, LTRIM , REPLACE
 문제실습 - 문제1, 문제2 풀기
