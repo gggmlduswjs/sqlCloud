@@ -1,0 +1,27 @@
+테이블
+
+CREATE TABLE t_emp
+(
+eid VARCHAR2(13) NOT NULL PRIMARY KEY ,
+ename VARCHAR2(20) ,
+salary NUMBER(5) ,
+deptno NUMBER(5) ,
+comm NUMBER(5) 
+);
+COMMIT;
+INSERT INTO t_emp VALUES ('e001' , '신동엽' , 280,10,100) ;
+INSERT INTO t_emp VALUES ('e002' , '유재석' , 250,20,50) ;
+INSERT INTO t_emp VALUES ('e003' , '전현무' , 190,30,0) ;
+INSERT INTO t_emp VALUES ('e004' , '양세영' , 300,20,0) ;
+INSERT INTO t_emp VALUES ('e005' , '양세찬' , 290,40,100) ;
+CREATE TABLE t_dept
+(
+deptno NUMBER(5) NOT NULL PRIMARY KEY ,
+dname VARCHAR2(20) 
+);
+COMMIT;
+INSERT INTO t_dept VALUES (10 , '영업팀') ;
+INSERT INTO t_dept VALUES (20 , '기획팀') ;
+INSERT INTO t_dept VALUES (30 , '관리팀') ;
+INSERT INTO t_dept VALUES (40 , '마케팅팀') ;
+INSERT INTO t_dept VALUES (50 , '재무팀') ;
