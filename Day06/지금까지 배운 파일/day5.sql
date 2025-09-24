@@ -329,7 +329,7 @@ select ename from v_emp;
    
    
     select * from  acorntbl
-    where point =10220;
+    where point =9220;
    
    
       
@@ -342,33 +342,12 @@ select ename from v_emp;
     
     
     --평균포인트보다 높은 회원 조회하기
-    select * from acorntbl;
-    
-    
-    select point
-from acorntbl;
-
-select avg(point)
-from acorntbl;
-
-select *
-from acorntbl
-where point>=1972
-    
     select name,point --대훈님 
     from acorntbl
     where point >(select avg( point)
     from acorntbl);
 
     --emp테이블에서 가장 높은  급여를 받는 사람의 이름을 조회하시오 (정문님) 
-    
-    -- 테이블 조회하기
-select * from emp;
-
--- 가장 높은 급여 구하기
-select max(sal)
-from emp;
-    
     SELECT ENAME
     FROM EMP
     WHERE SAL = (SELECT MAX(SAL) FROM EMP);
@@ -550,8 +529,6 @@ SELECT * FROM department;
    on a.id  = c.id;
    
    
-   
-   
   --문제 
     select *  from tbl_test_order;
     select *  from tbl_test_customer;
@@ -592,52 +569,9 @@ SELECT * FROM department;
   
     --420페이지  연습문제  1  , 2,  3 , 4     
     
-    --1)
-    select * from professor;
-select * from department;
-    
-    select *
-from professor p
-join department d
-on p.deptno=d.deptno;
-
-select p.profno,p.name,d.dname
-from professor p
-join department d
-on p.deptno=d.deptno;
-
-create view v_prof_dept2
-as
-	select p.profno,p.name,d.dname
-	from professor p
-	join department d
-	on p.deptno=d.deptno;
-
-commit;
-    
     -- 2)    
     -- 학과별  가장 큰키, 가장높은 몸무게 조회하기 (인라인 뷰로 만들기  - from 절 서브쿼리)
     -- 학과테이블과 조인하여 학과명과 함께 조회하기
-    
-    select * from student;
-select * from department;
-
-select deptno1 ,height, weight 
-from student;
-
-select deptno1, max(height), max(weight)
-from student
-group by deptno1;
-
-select 
-from (
-select deptno1, max(height), max(weight)
-from student
-group by deptno1) a
-join department d
-on a.deptno1=d.deptno;
-
-
     
     
     --성욱님
