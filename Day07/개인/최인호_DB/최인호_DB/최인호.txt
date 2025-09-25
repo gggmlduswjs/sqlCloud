@@ -1,0 +1,65 @@
+create table inc(
+ticker number(4) primary key,
+name varchar2(21) not null,
+facevalue number(4) not null,
+high52 number(6) not null,
+low52 number(6) not null
+);
+
+insert into inc values(5555,'인호생활건강',100,301000,160500);
+insert into inc values(3732,'민주금융지주',500,629000,352000);
+insert into inc values(5930,'주연전자',100,71800,51800);
+insert into inc values(2079,'근현바이오센서',2500,922000,740000);
+insert into inc values(3020,'인혜제약',500,485000,318500);
+insert into inc values(3542,'의수이엔지',100,348000,155000);
+insert into inc values(0950,'승원홀딩스',2500,123000,77100);
+insert into inc values(3773,'헌조전기',500,152000,32450);
+
+--------------------------------------------------------------------------------
+
+create table krx(
+ticker references inc(ticker) primary key,
+marketprice number(6) not null,
+marketcap number(7) not null
+);
+
+insert into krx values(5555,158000,77795);
+insert into krx values(3732,569000,1331460);
+insert into krx values(5930,60000,3575900);
+insert into krx values(2079,778000,553734);
+insert into krx values(3020,380500,83535);
+insert into krx values(3542,195700,321044);
+insert into krx values(0950,79100,89053);
+insert into krx values(3773,60200,80346);
+
+--------------------------------------------------------------------------------
+
+select * from inc;
+select * from krx;
+
+select * from inc join krx on krx.TICKER = inc.TICKER;
+
+--------------------------------------------------------------------------------
+
+select 
+i.ticker 종목코드,
+i.name 종목명,
+to_char(k.marketprice,'999,999')||'원' 현재가,
+to_char(k.marketcap,'9,999,999')||'억원' 시가총액,
+to_char(i.high52,'999,999')||'원' 연간최고가,
+to_char(i.low52,'999,999')||'원'연간최저가,
+to_char(i.facevalue,'9,999')||'원' 액면가
+from inc i join krx k 
+on i.TICKER = k.TICKER;
+
+select 
+i.ticker 종목코드,
+i.name 종목명,
+to_char(k.marketprice,'999,999')||'원' 현재가,
+to_char(k.marketcap,'9,999,999')||'억원' 시가총액,
+to_char(i.high52,'999,999')||'원' 연간최고가,
+to_char(i.low52,'999,999')||'원'연간최저가,
+to_char(i.facevalue,'9,999')||'원' 액면가
+from inc i join krx k 
+on i.TICKER = k.TICKER
+order by 시가총액 desc;

@@ -1,0 +1,858 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>김민규&amp;허재혁 (1)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="959da37b-14bd-4c98-af1f-a2f90bf116bd" class="page sans"><header><h1 class="page-title">김민규&amp;허재혁 (1)</h1><p class="page-description"></p></header><div class="page-body"><p id="06e53de4-4f40-4081-88d3-ce8295b00f34" class="">
+</p><p id="40f65e1e-f42a-40bb-96f3-1beb77f769ba" class="">
+</p><h3 id="59cf0f0e-0066-4f1c-a44d-8a88df23a9bf" class="">대상 선정</h3><p id="e6b67b1a-8237-44c3-9397-e20f09b940c7" class="">
+</p><ul id="e5684095-275b-4a8a-9a30-7b2c264eaca4" class="bulleted-list"><li style="list-style-type:disc">맥도날드 주문 내역 분석을 위한 데이터 수집</li></ul><p id="3ddb33a7-3a31-44da-b9f9-2683b941e14d" class="">
+</p><h3 id="20d2a758-2489-4097-9b92-2500c532c67a" class="">테이블 명칭</h3><p id="c5f233b0-e5c7-4da1-9090-e38db14631ba" class="">
+</p><p id="986ca308-56e0-41a2-a660-c901ee410c7b" class=""><strong>mc_menu table</strong></p><ul id="46a6b314-f48b-4d6c-98d5-aaea712ee9df" class="bulleted-list"><li style="list-style-type:disc"><code><strong>menu_code</strong></code>: 메뉴의 <span style="border-bottom:0.05em solid"><strong>주요 키</strong></span></li></ul><ul id="f948aee5-91c5-40db-9f53-82169810f1ff" class="bulleted-list"><li style="list-style-type:disc"><code><strong>menu_set</strong></code><strong>:</strong> 메뉴 세트의 <span style="border-bottom:0.05em solid"><strong>이름</strong></span></li></ul><ul id="b2d60d11-4319-4eb7-acb9-c47c881025b0" class="bulleted-list"><li style="list-style-type:disc"><code><strong>menu_price</strong></code>: 메뉴의 <span style="border-bottom:0.05em solid"><strong>가격</strong></span></li></ul><p id="73a5d010-9a09-4e1a-9b86-766f1581cd59" class="">
+</p><p id="72ffdce1-deb3-4189-8179-ddb0808c943e" class=""><span style="border-bottom:0.05em solid"><strong>도메인 제약 조건 </strong></span></p><p id="58637dc3-dd8d-4351-9920-755358b4eb25" class=""><code><strong>menu_code</strong></code>:  <strong>not null</strong></p><p id="9afd9c4f-22f6-436f-98d8-cc82718c6b60" class=""><code><strong>menu_set</strong></code> : <strong>default</strong> 시<strong><span style="border-bottom:0.05em solid"> ‘판매 중지‘</span></strong> 출력</p><p id="d076f80e-c4b9-4877-abb2-f331b7819d19" class=""><code><strong>menu_price</strong></code>: <strong>check</strong> </p><p id="d4190568-4c39-4da2-9261-2719e123b9e4" class="">
+</p><p id="26b8f64e-24ed-42ec-b748-81daec14e72e" class=""><span style="border-bottom:0.05em solid"><strong>엔티티 제약 조건</strong></span></p><p id="4115ead9-3110-4b63-aac7-e6d94f0aa67c" class=""><code><strong>menu_code</strong></code>:  <strong>primary key</strong></p><p id="907b0cfe-3724-4d24-995a-c3ea3fb29fda" class=""><code><strong>menu_set</strong></code><strong> : unique</strong></p><p id="f727deb9-85b3-4acf-89fc-d65086b62115" class="">
+</p><table id="e0f170d5-c9e3-4dcd-b413-44308954f1e3" class="simple-table"><tbody><tr id="8793acbf-4cc7-4e40-b9df-7b8aebfa2244"><td id="oN~l" class="" style="width:93px"><strong>menu_code
+</strong><mark class="highlight-blue"><strong>(메뉴코드)</strong></mark></td><td id="TXGQ" class="" style="width:145px"><strong>menu_set
+</strong><mark class="highlight-blue"><strong>(메뉴이름)</strong></mark></td><td id="nmCS" class="" style="width:94px"><strong>menu_price
+</strong><mark class="highlight-blue"><strong>(메뉴가격)</strong></mark></td></tr><tr id="eabb8377-7760-4fbe-9f93-e135a4046071"><td id="oN~l" class="" style="width:93px">A001</td><td id="TXGQ" class="" style="width:145px">불고기버거세트</td><td id="nmCS" class="" style="width:94px">8900</td></tr><tr id="e63a0695-5e5b-4429-a80d-73937b5abf77"><td id="oN~l" class="" style="width:93px">A002</td><td id="TXGQ" class="" style="width:145px">빅맥세트</td><td id="nmCS" class="" style="width:94px">9300</td></tr><tr id="54610647-7ea7-4f9d-b004-a116546cb044"><td id="oN~l" class="" style="width:93px">A003</td><td id="TXGQ" class="" style="width:145px">치즈버거세트</td><td id="nmCS" class="" style="width:94px">7000</td></tr><tr id="5b22e486-92db-4ecf-a48f-d5df5d801d0f"><td id="oN~l" class="" style="width:93px">A004</td><td id="TXGQ" class="" style="width:145px">창녕갈릭버거세트</td><td id="nmCS" class="" style="width:94px">12000</td></tr><tr id="1105080a-f694-49a6-96b6-925af3fbe681"><td id="oN~l" class="" style="width:93px">A005</td><td id="TXGQ" class="" style="width:145px">더블쿼터파운더세트</td><td id="nmCS" class="" style="width:94px">12000</td></tr><tr id="f14ceb5a-c4a0-45ba-8c18-cc028a4136ce"><td id="oN~l" class="" style="width:93px">A006</td><td id="TXGQ" class="" style="width:145px">판매중지</td><td id="nmCS" class="" style="width:94px">7200</td></tr></tbody></table><p id="bd92fd81-6324-4ea3-8afa-bcd0be410bd7" class="">
+</p><hr id="2d06875f-71e7-473a-9630-c50501a3e73a"/><hr id="aefefeaf-07f2-4555-886e-e259d7a38e5a"/><p id="7d6fbad5-fd9a-466d-9b2b-d0f225fa3f4f" class="">
+</p><p id="34b3372b-bccd-4871-99dc-feb69e619691" class=""><strong>mc_customer 테이블</strong></p><p id="f6536d90-68c2-4c61-b205-6e1d4da91653" class="">
+</p><ul id="527d1c90-613c-48cd-9483-d534b31e66dd" class="bulleted-list"><li style="list-style-type:disc"><code><strong>cust_code</strong></code>: 고객의 <span style="border-bottom:0.05em solid"><strong>주요 키</strong></span></li></ul><ul id="5c81e2c8-7473-47f5-a011-a2277993ecee" class="bulleted-list"><li style="list-style-type:disc"><code><strong>cust_name</strong></code>: 고객의 <span style="border-bottom:0.05em solid"><strong>이름</strong></span></li></ul><ul id="dc11e72c-ad8d-4c59-96a1-3e16eca67866" class="bulleted-list"><li style="list-style-type:disc"><code><strong>cust_adress</strong></code>: 고객의 <span style="border-bottom:0.05em solid"><strong>주소</strong></span></li></ul><p id="09de7b3c-c54a-4ff1-b64e-d62e7781f1f7" class="">
+</p><p id="c8c2ee06-75aa-4da4-b342-d46ec866258b" class=""><span style="border-bottom:0.05em solid"><strong>도메인 제약 조건 </strong></span></p><p id="9f47d2bc-bae2-4ceb-8693-1f418d44c964" class=""><code><strong>cust_code</strong></code>: <strong>not null </strong></p><p id="fdbe40cb-571f-4fde-a3b1-dab7bb12ac79" class=""><code><strong>cust_name</strong></code> :<strong> not null</strong></p><p id="3655ff8d-4b30-4da5-94c3-b63350ba40ec" class="">
+</p><p id="d24aa95e-37c4-413b-a473-672c6d0db9fb" class=""><span style="border-bottom:0.05em solid"><strong>엔티티 제약 조건</strong></span></p><p id="15ceec09-3d4b-4e10-9c68-c6373aea3236" class=""><code><code><code><code>cust</code></code></code></code><code><strong>_code</strong></code>:  <strong>primary key</strong></p><p id="081f8ee2-7b82-4ef2-8e66-99de21b3e517" class="">
+</p><table id="80730b25-f745-4de7-beaf-930d3f3cdc3a" class="simple-table"><tbody><tr id="f1bfb190-688a-4503-b92d-2dbedfe23c52"><td id="BUTJ" class="" style="width:87px"><strong>cust_code
+</strong><mark class="highlight-blue"><strong>(고객코드)</strong></mark></td><td id="rHfM" class="" style="width:108px"><strong>cust_name
+</strong><mark class="highlight-blue"><strong>(고객이름)</strong></mark></td><td id="XGmw" class="" style="width:135.84375px"><strong>cust_adress
+(</strong><mark class="highlight-blue"><strong>고객주소)</strong></mark></td></tr><tr id="2f3088ba-fab2-4fa2-8ad2-2d9e99eeb29e"><td id="BUTJ" class="" style="width:87px">B001</td><td id="rHfM" class="" style="width:108px">김민규</td><td id="XGmw" class="" style="width:135.84375px">강서구 우주빌라</td></tr><tr id="c9563ab4-c6ab-451d-bb2b-d6cd816ebbb4"><td id="BUTJ" class="" style="width:87px">B002</td><td id="rHfM" class="" style="width:108px">김민우</td><td id="XGmw" class="" style="width:135.84375px">양천구 한성아파트</td></tr><tr id="78b43d94-5df4-47a0-8de0-564e261af7e9"><td id="BUTJ" class="" style="width:87px">B003</td><td id="rHfM" class="" style="width:108px">김민수</td><td id="XGmw" class="" style="width:135.84375px">은평구 신아빌라</td></tr><tr id="6fa980d7-343a-49fa-acc1-ee03e5f3456d"><td id="BUTJ" class="" style="width:87px">B004</td><td id="rHfM" class="" style="width:108px">김민주</td><td id="XGmw" class="" style="width:135.84375px">마포구 신아빌라</td></tr><tr id="59867fcd-1913-4e61-8d80-58f7a46eb08f"><td id="BUTJ" class="" style="width:87px">B005</td><td id="rHfM" class="" style="width:108px">김민후</td><td id="XGmw" class="" style="width:135.84375px">강남구 롯데캐슬</td></tr></tbody></table><p id="3c2437ac-f7b3-4330-9d63-b9503ce19821" class="">
+</p><hr id="3e701ddd-6050-4559-913b-4a6a254fd485"/><hr id="f644034e-089a-4078-8cb2-d53c0ac52809"/><p id="66fd705c-7c68-4e45-84f2-3394e789c946" class="">
+</p><p id="f653c138-9593-49dd-a831-6a3a126f5fc7" class=""><strong>MC_ORDER 테이블</strong></p><p id="03eda0dc-ad42-42db-b7dc-eb7f0a48f008" class="">
+</p><ul id="c328e6b7-f179-4aa2-8d80-e67517e0679c" class="bulleted-list"><li style="list-style-type:disc"><code><strong>ORDER_CODE</strong></code>: 주문한 메뉴의 <span style="border-bottom:0.05em solid"><strong>주요 키</strong></span></li></ul><p id="4ed37fdb-4917-4553-98f1-1c11b1995684" class="">
+</p><ul id="b0709b2c-4a4f-493f-89f5-b996fe869117" class="bulleted-list"><li style="list-style-type:disc"><code><strong>ORDER_M_CODE</strong></code>: <mark class="highlight-teal"><span style="border-bottom:0.05em solid"><strong>mc_menu</strong></span></mark> 테이블의 정보를 불러오는 <code><strong>menu_code  </strong></code>의 <mark class="highlight-teal"><span style="border-bottom:0.05em solid"><strong>외래 키</strong></span></mark></li></ul><ul id="43c3167e-c7cd-405e-b322-4b497ff0f916" class="bulleted-list"><li style="list-style-type:disc"><code><strong>ORDER_C_CODE</strong></code>:  <mark class="highlight-teal"><span style="border-bottom:0.05em solid"><strong>mc_customer</strong></span></mark> 테이블의 정보를 불러오는 <code><strong>cust_code</strong></code>의 <mark class="highlight-teal"><span style="border-bottom:0.05em solid"><strong>외래 키</strong></span></mark></li></ul><ul id="039fb379-8bad-41c2-9d8b-2f95849c9c83" class="bulleted-list"><li style="list-style-type:disc"><code><strong>order_S_code</strong></code>:  <mark class="highlight-teal"><span style="border-bottom:0.05em solid"><strong>mc_store_loc</strong></span></mark><span style="border-bottom:0.05em solid"><strong> </strong></span>테이블의 정보를 불러오는<code><strong>store_code</strong></code>의 <mark class="highlight-teal"><span style="border-bottom:0.05em solid"><strong>외래 키</strong></span></mark></li></ul><p id="d39109e1-6223-461e-a87d-f291977b1439" class="">
+</p><ul id="806594df-a73e-457b-87a6-a3567131d648" class="bulleted-list"><li style="list-style-type:disc"><code><strong>ORDER_SALE_CNT</strong></code>: 주문한 메뉴의 <strong>수량</strong>을 확인  ( 0보다 커야함 )</li></ul><p id="076990c0-d539-4b12-9181-f25cb9d9b42c" class="">
+</p><p id="0c19ee15-598a-4bb5-876b-1790e24dd761" class=""><span style="border-bottom:0.05em solid"><strong>도메인 제약 조건 </strong></span></p><p id="a50e3898-23b3-470b-a3b1-332ad78568da" class=""><code><strong>ORDER_M_CODE</strong></code>: <strong>not null </strong></p><p id="1dee23e6-c6e9-4866-8c01-3388ec51d51c" class=""><code><strong>ORDER_C_CODE</strong></code>: <strong>not null </strong></p><p id="f7687354-9463-4dcf-8163-5b572539b21d" class=""><code><strong>ORDER_S_CODE</strong></code>: <strong>not null </strong></p><p id="6f132116-4f6f-464c-ac21-57a196fe32fb" class=""><code><strong>ORDER_SALE_CNT</strong></code><strong> : check</strong></p><p id="f69e7d89-407e-4df7-ba65-9cd3b63fa20a" class="">
+</p><p id="0b4fe2cb-94f6-46e4-8b10-5bf47afdbb3b" class=""><span style="border-bottom:0.05em solid"><strong>엔티티 제약 조건</strong></span></p><p id="37f53df5-877e-475a-9be2-8510a62dc0d2" class=""><code><strong>ORDER_CODE</strong></code>:  <strong>primary key</strong></p><p id="99d872e9-0efc-492a-9d06-ec4f7c683510" class="">
+</p><table id="55201aa6-20ee-4475-a34f-764a5f682cfa" class="simple-table"><tbody><tr id="1df00c9e-1248-46bb-bb54-15e0abab1923"><td id="{dmC" class=""><strong>ORDER_CODE 
+</strong><mark class="highlight-blue"><strong>(주문코드)</strong></mark></td><td id="lpQr" class=""><strong>ORDER_M_CODE
+</strong><mark class="highlight-blue"><strong>(메뉴코드)</strong></mark></td><td id="^Ru@" class=""><strong>ORDER_C_CODE
+</strong><mark class="highlight-blue"><strong>(고객코드)</strong></mark></td><td id="}QcX" class="" style="width:106px"><strong>order_S_code
+</strong><mark class="highlight-blue"><strong>(매장코드)</strong></mark></td><td id="rHN\" class="" style="width:136.203125px"><strong>ORDER_SALE_CNT
+</strong><mark class="highlight-blue"><strong>(주문수량)</strong></mark></td></tr><tr id="a3a41e57-52b1-409a-9cd2-a2647c417cc6"><td id="{dmC" class="">C001</td><td id="lpQr" class="">A001</td><td id="^Ru@" class="">B001</td><td id="}QcX" class="" style="width:106px">P001</td><td id="rHN\" class="" style="width:136.203125px">5</td></tr><tr id="fbe44ea4-0cb0-454e-94f3-0a2d93f400f6"><td id="{dmC" class="">C002</td><td id="lpQr" class="">A002</td><td id="^Ru@" class="">B004</td><td id="}QcX" class="" style="width:106px">P004</td><td id="rHN\" class="" style="width:136.203125px">1</td></tr><tr id="8986b443-48c4-4b48-9777-c0e9155d3c37"><td id="{dmC" class="">C003</td><td id="lpQr" class="">A002</td><td id="^Ru@" class="">B003</td><td id="}QcX" class="" style="width:106px">P003</td><td id="rHN\" class="" style="width:136.203125px">1</td></tr><tr id="118503ae-cb0b-4a45-a64d-00cb88da3036"><td id="{dmC" class="">C004</td><td id="lpQr" class="">A003</td><td id="^Ru@" class="">B002</td><td id="}QcX" class="" style="width:106px">P002</td><td id="rHN\" class="" style="width:136.203125px">2</td></tr><tr id="ae75a500-0c73-49d5-9db8-809a973c412f"><td id="{dmC" class="">C005</td><td id="lpQr" class="">A004</td><td id="^Ru@" class="">B005</td><td id="}QcX" class="" style="width:106px">P005</td><td id="rHN\" class="" style="width:136.203125px">1</td></tr><tr id="8853b5d0-0105-46ef-a3b0-bb224cd1b446"><td id="{dmC" class="">C006</td><td id="lpQr" class="">A002</td><td id="^Ru@" class="">B002</td><td id="}QcX" class="" style="width:106px">P002</td><td id="rHN\" class="" style="width:136.203125px">2</td></tr><tr id="e6b52d76-f391-48d4-9cdc-4d324e8f6a0e"><td id="{dmC" class="">C007</td><td id="lpQr" class="">A003</td><td id="^Ru@" class="">B004</td><td id="}QcX" class="" style="width:106px">P004</td><td id="rHN\" class="" style="width:136.203125px">3</td></tr><tr id="e452b095-a72d-4412-af31-d2357897b82c"><td id="{dmC" class="">C008</td><td id="lpQr" class="">A005</td><td id="^Ru@" class="">B001</td><td id="}QcX" class="" style="width:106px">P001</td><td id="rHN\" class="" style="width:136.203125px">1</td></tr><tr id="97b92856-b757-40aa-b004-bb1d7e530655"><td id="{dmC" class="">C009</td><td id="lpQr" class="">A001</td><td id="^Ru@" class="">B002</td><td id="}QcX" class="" style="width:106px">P002</td><td id="rHN\" class="" style="width:136.203125px">1</td></tr></tbody></table><p id="e79649ee-1c52-49f2-ad62-049063edd421" class="">
+</p><hr id="c5caa8e7-9526-4728-a363-21a206a6eb2a"/><hr id="dadaca70-e8a5-435d-8139-d8d9dc79a394"/><p id="9f36cbe4-8bf4-4b65-a795-a190370b5506" class="">
+</p><p id="720ba974-8322-4466-911e-e33be5ea9d28" class=""><strong>mc_store_loc 테이블</strong></p><p id="40bc7f91-403d-4217-b024-346b597deb8b" class="">
+</p><ul id="6b938784-ab89-4c0d-bd6a-7c3beb7b95d2" class="bulleted-list"><li style="list-style-type:disc"><code><strong>store_code</strong></code>: 매장의 주요 키</li></ul><ul id="98687be4-9f98-440a-8541-f83e18499ddf" class="bulleted-list"><li style="list-style-type:disc"><code><strong>store_loc</strong></code>: 매장의 위치</li></ul><p id="a886bc02-7ee2-42e0-9988-e981ac163cb7" class="">
+</p><p id="8f569dbf-8fa1-4671-ae90-f5f64c841e11" class=""><span style="border-bottom:0.05em solid"><strong>도메인 제약 조건 </strong></span></p><p id="56e92b6c-0e90-4155-aea0-ffdddd4935fc" class=""><code><strong>store_code</strong></code>: <strong>not null </strong></p><p id="a4db7a7e-ae6d-4d91-b2dc-7095f9f640b4" class=""><code><strong>store_loc</strong></code>: <strong>not null </strong></p><p id="c94361c6-9b3b-4c15-b7a2-9e2ea7c4ad6c" class="">
+</p><p id="12df66b2-a4e8-49f9-a512-83868c97aa2f" class=""><span style="border-bottom:0.05em solid"><strong>엔티티 제약 조건</strong></span></p><p id="759fca0f-0228-4cf4-b210-e190c91888d7" class=""><code><strong>store_code</strong></code>:  <strong>primary key</strong></p><p id="ee3ce0d6-6267-4ef3-bf69-fbb3fcca7e82" class=""><code><strong>store_loc</strong></code><strong> : unique</strong></p><p id="bdbe73ac-124e-4ccb-a95c-6273500956a6" class="">
+</p><table id="a4631a1f-b127-4d6c-be0c-c6440a567daf" class="simple-table"><tbody><tr id="32fde7f4-f93d-4bdd-a5eb-78405b23c67e"><td id="uyJ`" class=""><strong>store_code
+</strong><mark class="highlight-blue"><strong>(매장코드)</strong></mark></td><td id="njp_" class=""><strong>store_loc
+</strong><mark class="highlight-blue"><strong>(매장위치)</strong></mark></td></tr><tr id="a48f0d5d-2840-465c-b01a-84268a259bdf"><td id="uyJ`" class="">P001</td><td id="njp_" class="">강서점</td></tr><tr id="3c6dc677-0e8c-461f-a929-4cf611f060c1"><td id="uyJ`" class="">P002</td><td id="njp_" class="">양천점</td></tr><tr id="9d9dad8b-810b-4a0f-82b2-ee146e5723fb"><td id="uyJ`" class="">P003</td><td id="njp_" class="">은평점</td></tr><tr id="8840ec4d-5f29-400d-bcc9-71baea62a7c0"><td id="uyJ`" class="">P004</td><td id="njp_" class="">마포점</td></tr><tr id="bfdb5795-ab72-4498-bd5a-e8da4b784ce7"><td id="uyJ`" class="">P005</td><td id="njp_" class="">강남점</td></tr></tbody></table><p id="0bc91314-4538-4e02-8730-92336795d455" class="">
+</p><hr id="149fe8bb-45ee-4bfc-9554-4d5edbd604db"/><hr id="dcf933cc-0cb4-44f3-94a7-dbdc5ca50ad3"/><p id="1dfbb267-a37d-4f0c-ac99-039eacc81fbd" class="">
+</p><p id="edc99224-85a5-4abd-97ae-f411fb0399f3" class=""><strong>판매 정보 불러오기 </strong></p><p id="b6fade9f-0588-4698-ada9-1c68164e3a4f" class="">
+</p><table id="9d0e7626-ed06-410b-ba50-70caef83c043" class="simple-table"><tbody><tr id="7b7b6853-2364-45cd-b6ba-57456165e974"><td id="rJwZ" class="" style="width:146.453125px"><strong>메뉴이름</strong></td><td id="wfAU" class="" style="width:75.453125px"><strong>메뉴가격</strong></td><td id="k]BM" class="" style="width:75.453125px"><strong>고객이름</strong></td><td id="YY=R" class="" style="width:139.453125px"><strong>고객주소</strong></td><td id="=DW_" class="" style="width:75.453125px"><strong>주문수량</strong></td><td id="gi}Q" class="" style="width:77.453125px"><strong>메뉴코드</strong></td><td id="dL^M" class="" style="width:75.453125px"><strong>주문코드</strong></td><td id="fr[{" class="" style="width:81.453125px"><strong>고객코드</strong></td><td id="`nyT" class="" style="width:79.453125px"><strong>매장코드</strong></td><td id="tY{x" class="" style="width:74.453125px"><strong>매장명</strong></td><td id="DDKG" class="" style="width:74.453125px"><strong>매출액</strong></td></tr><tr id="89f93885-2c39-4a0e-b2f9-cc69cfad40ea"><td id="rJwZ" class="" style="width:146.453125px">불고기버거세트</td><td id="wfAU" class="" style="width:75.453125px">8,900원</td><td id="k]BM" class="" style="width:75.453125px">김**</td><td id="YY=R" class="" style="width:139.453125px">강서구 우주빌라</td><td id="=DW_" class="" style="width:75.453125px">5</td><td id="gi}Q" class="" style="width:77.453125px">A001</td><td id="dL^M" class="" style="width:75.453125px">C001</td><td id="fr[{" class="" style="width:81.453125px">B001</td><td id="`nyT" class="" style="width:79.453125px">P001</td><td id="tY{x" class="" style="width:74.453125px">강서점</td><td id="DDKG" class="" style="width:74.453125px">44,500원</td></tr><tr id="ee2ef358-28ba-419c-ad1f-b65532342f69"><td id="rJwZ" class="" style="width:146.453125px">빅맥세트</td><td id="wfAU" class="" style="width:75.453125px">9,300원</td><td id="k]BM" class="" style="width:75.453125px">김**</td><td id="YY=R" class="" style="width:139.453125px">마포구 신아빌라</td><td id="=DW_" class="" style="width:75.453125px">1</td><td id="gi}Q" class="" style="width:77.453125px">A002</td><td id="dL^M" class="" style="width:75.453125px">C002</td><td id="fr[{" class="" style="width:81.453125px">B004</td><td id="`nyT" class="" style="width:79.453125px">P004</td><td id="tY{x" class="" style="width:74.453125px">마포점</td><td id="DDKG" class="" style="width:74.453125px">9,300원</td></tr><tr id="6861d0af-5841-485b-b4db-688134fa39a7"><td id="rJwZ" class="" style="width:146.453125px">빅맥세트</td><td id="wfAU" class="" style="width:75.453125px">9,300원</td><td id="k]BM" class="" style="width:75.453125px">김**</td><td id="YY=R" class="" style="width:139.453125px">은평구 신아빌라</td><td id="=DW_" class="" style="width:75.453125px">1</td><td id="gi}Q" class="" style="width:77.453125px">A002</td><td id="dL^M" class="" style="width:75.453125px">C003</td><td id="fr[{" class="" style="width:81.453125px">B003</td><td id="`nyT" class="" style="width:79.453125px">P003</td><td id="tY{x" class="" style="width:74.453125px">은평점</td><td id="DDKG" class="" style="width:74.453125px">9,300원</td></tr><tr id="c9e5ae0d-54c3-4a7d-9e8b-a0a91fc08c3b"><td id="rJwZ" class="" style="width:146.453125px">치즈버거세트</td><td id="wfAU" class="" style="width:75.453125px">7,000원</td><td id="k]BM" class="" style="width:75.453125px">김**</td><td id="YY=R" class="" style="width:139.453125px">양천구 한성아파트</td><td id="=DW_" class="" style="width:75.453125px">2</td><td id="gi}Q" class="" style="width:77.453125px">A003</td><td id="dL^M" class="" style="width:75.453125px">C004</td><td id="fr[{" class="" style="width:81.453125px">B002</td><td id="`nyT" class="" style="width:79.453125px">P002</td><td id="tY{x" class="" style="width:74.453125px">양천점</td><td id="DDKG" class="" style="width:74.453125px">14,000원</td></tr><tr id="f0112924-4016-4f90-91c5-f86ac6a15fec"><td id="rJwZ" class="" style="width:146.453125px">창녕갈릭버거세트</td><td id="wfAU" class="" style="width:75.453125px">12,000원</td><td id="k]BM" class="" style="width:75.453125px">김**</td><td id="YY=R" class="" style="width:139.453125px">강남구 롯데캐슬</td><td id="=DW_" class="" style="width:75.453125px">1</td><td id="gi}Q" class="" style="width:77.453125px">A004</td><td id="dL^M" class="" style="width:75.453125px">C005</td><td id="fr[{" class="" style="width:81.453125px">B005</td><td id="`nyT" class="" style="width:79.453125px">P005</td><td id="tY{x" class="" style="width:74.453125px">강남점</td><td id="DDKG" class="" style="width:74.453125px">12,000원</td></tr><tr id="546c8cb9-47e3-4c17-9e89-2807f18a49d7"><td id="rJwZ" class="" style="width:146.453125px">빅맥세트</td><td id="wfAU" class="" style="width:75.453125px">9,300원</td><td id="k]BM" class="" style="width:75.453125px">김**</td><td id="YY=R" class="" style="width:139.453125px">양천구 한성아파트</td><td id="=DW_" class="" style="width:75.453125px">2</td><td id="gi}Q" class="" style="width:77.453125px">A002</td><td id="dL^M" class="" style="width:75.453125px">C006</td><td id="fr[{" class="" style="width:81.453125px">B002</td><td id="`nyT" class="" style="width:79.453125px">P002</td><td id="tY{x" class="" style="width:74.453125px">양천점</td><td id="DDKG" class="" style="width:74.453125px">18,600원</td></tr><tr id="65097beb-29d0-4696-ad00-aa03ba8494c6"><td id="rJwZ" class="" style="width:146.453125px">치즈버거세트</td><td id="wfAU" class="" style="width:75.453125px">7,000원</td><td id="k]BM" class="" style="width:75.453125px">김**</td><td id="YY=R" class="" style="width:139.453125px">마포구 신아빌라</td><td id="=DW_" class="" style="width:75.453125px">3</td><td id="gi}Q" class="" style="width:77.453125px">A003</td><td id="dL^M" class="" style="width:75.453125px">C007</td><td id="fr[{" class="" style="width:81.453125px">B004</td><td id="`nyT" class="" style="width:79.453125px">P004</td><td id="tY{x" class="" style="width:74.453125px">마포점</td><td id="DDKG" class="" style="width:74.453125px">21,000원</td></tr><tr id="3e450200-6ed6-4648-833b-26232d232c04"><td id="rJwZ" class="" style="width:146.453125px">더블쿼터파운더세트</td><td id="wfAU" class="" style="width:75.453125px">12,000원</td><td id="k]BM" class="" style="width:75.453125px">김**</td><td id="YY=R" class="" style="width:139.453125px">강서구 우주빌라</td><td id="=DW_" class="" style="width:75.453125px">1</td><td id="gi}Q" class="" style="width:77.453125px">A005</td><td id="dL^M" class="" style="width:75.453125px">C008</td><td id="fr[{" class="" style="width:81.453125px">B001</td><td id="`nyT" class="" style="width:79.453125px">P001</td><td id="tY{x" class="" style="width:74.453125px">강서점</td><td id="DDKG" class="" style="width:74.453125px">12,000원</td></tr><tr id="4261f454-f4ca-4c7c-bc7c-33982fbb8168"><td id="rJwZ" class="" style="width:146.453125px">불고기버거세트</td><td id="wfAU" class="" style="width:75.453125px">8,900원</td><td id="k]BM" class="" style="width:75.453125px">김**</td><td id="YY=R" class="" style="width:139.453125px">양천구 한성아파트</td><td id="=DW_" class="" style="width:75.453125px">1</td><td id="gi}Q" class="" style="width:77.453125px">A001</td><td id="dL^M" class="" style="width:75.453125px">C009</td><td id="fr[{" class="" style="width:81.453125px">B002</td><td id="`nyT" class="" style="width:79.453125px">P002</td><td id="tY{x" class="" style="width:74.453125px">양천점</td><td id="DDKG" class="" style="width:74.453125px">8,900원</td></tr></tbody></table><p id="bcf8f576-8d58-4e38-bb50-3ab64f9a4f3e" class="">
+</p><ul id="0895e8b5-f1c3-44c2-8ca7-330e4cf32a8c" class="bulleted-list"><li style="list-style-type:disc"><strong>집계함수(</strong><mark class="highlight-red"><strong>SUM</strong></mark><strong>)를 사용해서 총 매출액을 구함
+</strong></li></ul><ul id="3e9be722-c394-48ff-af64-be0a7ef9adec" class="bulleted-list"><li style="list-style-type:disc"><strong>SUBSTR 함수를 사용하여 고객 이름을 익명화</strong></li></ul><p id="477c0af6-d6f3-4001-8ec4-0f11839dd721" class="">
+</p><p id="d2a26e64-4d39-4c48-ba09-2f351785320c" class=""><strong>매장 별 총 매출액</strong></p><p id="9d0aae21-e955-4149-a20b-0acb9d083249" class="">
+</p><table id="ba963839-0597-414c-a700-2c011746dda1" class="simple-table"><tbody><tr id="314454eb-cac8-44c2-9665-190de38451ac"><td id="WOYu" class=""><strong>매장명</strong></td><td id="{yC&lt;" class=""><strong>매출액</strong></td></tr><tr id="a4599ea1-abad-4756-b149-8837086b261d"><td id="WOYu" class="">강서점</td><td id="{yC&lt;" class="">65,400원</td></tr><tr id="ae6ad799-e421-45b7-a19b-9c9c7ff2680a"><td id="WOYu" class="">양천점</td><td id="{yC&lt;" class="">41,400원</td></tr><tr id="302b0318-4f91-40a9-84a5-1ab874329e8f"><td id="WOYu" class="">은평점</td><td id="{yC&lt;" class="">9,300원</td></tr><tr id="9be195ac-09da-4746-9d75-84dc4037bc93"><td id="WOYu" class="">마포점</td><td id="{yC&lt;" class="">30,300원</td></tr><tr id="a2f23bb2-fc34-43e3-8c6b-80b5b0c171d2"><td id="WOYu" class="">강남점</td><td id="{yC&lt;" class="">12,000원</td></tr></tbody></table><p id="9e6c75fb-37d2-4420-8c62-792711eb4bee" class="">
+</p><ul id="a20ed9da-e8d8-4dec-923e-bf36373d5fdb" class="bulleted-list"><li style="list-style-type:disc"><strong>GROUP BY를 이용해 중복되는 내용를 줄이고 총 매출액을 구함</strong></li></ul><p id="330dbd4a-1a52-48e9-87af-08814eb0ee2b" class="">
+</p><hr id="9e1bd209-bc8b-43d4-a782-13247c20d74e"/><hr id="88da645c-0275-4144-bb67-a174a3b25437"/><p id="f844f404-1e36-489b-95dc-be7541aa076d" class="">
+</p><h3 id="f4e41d77-08b5-464e-9b66-ece3c896a768" class="">SQL</h3><pre id="ee26437f-0e0a-4feb-96a0-b73dfff05444" class="code code-wrap"><code>
+
+
+
+--메뉴정보--
+
+CREATE TABLE mc_menu(
+    menu_code      VARCHAR2(4) NOT NULL PRIMARY KEY ,
+    menu_set       VARCHAR2(50) default &#x27;판매중지&#x27; UNIQUE ,
+    menu_price     number(10) check (menu_price &gt; 0)
+);
+
+INSERT INTO mc_menu VALUES (&#x27;A001&#x27;, &#x27;불고기버거세트&#x27;, &#x27;8900&#x27;);
+INSERT INTO mc_menu VALUES (&#x27;A002&#x27;, &#x27;빅맥세트&#x27;, &#x27;9300&#x27;);
+INSERT INTO mc_menu VALUES (&#x27;A003&#x27;, &#x27;치즈버거세트&#x27;, &#x27;7000&#x27;);
+INSERT INTO mc_menu VALUES (&#x27;A004&#x27;, &#x27;창녕갈릭버거세트&#x27;, &#x27;12000&#x27;);
+INSERT INTO mc_menu VALUES (&#x27;A005&#x27;, &#x27;더블쿼터파운더세트&#x27;, &#x27;12000&#x27;);
+INSERT INTO mc_menu(MENU_CODE, MENU_PRICE) VALUES (&#x27;A006&#x27;, &#x27;7200&#x27;);
+
+--고객정보--
+
+CREATE TABLE MC_CUSTOMER(
+    cust_code varchar(5) not null primary key ,
+    cust_name varchar(20) not null ,
+    cust_adress varchar (50)
+);
+
+INSERT INTO mc_customer VALUES (&#x27;B001&#x27;, &#x27;김민규&#x27;, &#x27;강서구 우주빌라&#x27;);
+INSERT INTO mc_customer VALUES (&#x27;B002&#x27;, &#x27;김민우&#x27;, &#x27;양천구 한성아파트&#x27;);
+INSERT INTO mc_customer VALUES (&#x27;B003&#x27;, &#x27;김민수&#x27;, &#x27;은평구 신아빌라&#x27;);
+INSERT INTO mc_customer VALUES (&#x27;B004&#x27;, &#x27;김민주&#x27;, &#x27;마포구 신아빌라&#x27;);
+INSERT INTO mc_customer VALUES (&#x27;B005&#x27;, &#x27;김민후&#x27;, &#x27;강남구 롯데캐슬&#x27;);
+
+
+--주문정보--
+
+CREATE TABLE MC_ORDER(
+	  ORDER_CODE VARCHAR2(5) NOT NULL PRIMARY KEY ,
+		ORDER_M_CODE VARCHAR2(5) NOT NULL ,
+		ORDER_C_CODE VARCHAR2(5) NOT NULL ,
+		ORDER_S_CODE varchar2(5) not null,
+		ORDER_SALE_CNT NUMBER CHECK ( ORDER_SALE_CNT &gt; 0 )
+
+insert into MC_ORDER values (&#x27;C001&#x27; , &#x27;A001&#x27; , &#x27;B001&#x27;,&#x27;P001&#x27; ,5);
+insert into MC_ORDER values (&#x27;C002&#x27; , &#x27;A002&#x27; , &#x27;B004&#x27;,&#x27;P004&#x27; ,1);
+insert into MC_ORDER values (&#x27;C003&#x27; , &#x27;A002&#x27; , &#x27;B003&#x27;,&#x27;P003&#x27; ,1);
+insert into MC_ORDER values (&#x27;C004&#x27; , &#x27;A003&#x27; , &#x27;B002&#x27;,&#x27;P002&#x27; ,2);
+insert into MC_ORDER values (&#x27;C005&#x27; , &#x27;A004&#x27; , &#x27;B005&#x27;,&#x27;P005&#x27; ,1);
+insert into MC_ORDER values (&#x27;C006&#x27; , &#x27;A002&#x27; , &#x27;B002&#x27;,&#x27;P002&#x27; ,2);
+insert into MC_ORDER values (&#x27;C007&#x27; , &#x27;A003&#x27; , &#x27;B004&#x27;,&#x27;P004&#x27; ,3);
+insert into MC_ORDER values (&#x27;C008&#x27; , &#x27;A005&#x27; , &#x27;B001&#x27;,&#x27;P001&#x27; ,1);
+insert into MC_ORDER values (&#x27;C009&#x27; , &#x27;A001&#x27; , &#x27;B002&#x27;,&#x27;P002&#x27; ,1);
+
+
+--매장정보--
+
+create table mc_store_loc (
+  store_code varchar2(5) not null primary key ,
+  store_loc  VARCHAR2(20) not null UNIQUE
+);
+
+insert into mc_store_loc values (&#x27;P001&#x27; , &#x27;강서점&#x27;);
+insert into mc_store_loc values (&#x27;P002&#x27; , &#x27;양천점&#x27;);
+insert into mc_store_loc values (&#x27;P003&#x27; , &#x27;은평점&#x27;);
+insert into mc_store_loc values (&#x27;P004&#x27; , &#x27;마포점&#x27;);
+insert into mc_store_loc values (&#x27;P005&#x27; , &#x27;강남점&#x27;);
+COMMIT;
+
+
+-- 삭제시 사용 --
+
+DROP TABLE MC_MENU;
+DROP TABLE MC_CUSTOMER;
+DROP TABLE MC_ORDER;
+drop table mc_store_loc;
+
+
+
+--전체정보 불러오기--
+
+select 
+m.MENU_SET AS 메뉴이름,
+TO_CHAR(m.MENU_PRICE, &#x27;999,999&#x27;)||&#x27;원&#x27; AS 메뉴가격,
+
+-- 고객이름 암호화--
+
+SUBSTR(c.CUST_NAME, 1, 1) || &#x27;**&#x27; as 고객이름,
+
+c.CUST_ADRESS AS 고객주소,
+
+
+o.ORDER_SALE_CNT AS 주문수량,
+o.ORDER_M_CODE AS 메뉴코드,
+o.ORDER_CODE AS 주문코드 ,
+o.ORDER_C_CODE AS 고객코드,
+o.ORDER_S_CODE AS 매장코드,
+
+
+
+s.STORE_LOC AS 매장명,
+to_char(SUM(m.menu_price * o.ORDER_SALE_CNT), &#x27;999,999&#x27;) || &#x27;원&#x27; AS 매출액
+
+from mc_order o
+join MC_CUSTOMER c on o.ORDER_C_CODE = c.CUST_CODE
+join MC_MENU m on o.ORDER_M_CODE=m.MENU_CODE
+JOIN MC_STORE_LOC s on o.ORDER_S_CODE= s.STORE_CODE
+
+group by 
+s.STORE_LOC,
+m.MENU_SET,
+m.MENU_PRICE,
+c.CUST_NAME,
+c.CUST_ADRESS,
+o.ORDER_SALE_CNT,
+o.ORDER_M_CODE,
+o.ORDER_CODE,
+o.ORDER_C_CODE,
+o.ORDER_S_CODE;
+
+
+-- 매장별 매출액 --
+
+select 
+s.STORE_LOC AS 매장명,
+to_char(SUM(m.menu_price * o.ORDER_SALE_CNT), &#x27;999,999&#x27;) || &#x27;원&#x27; AS 매출액
+
+from mc_order o
+join MC_MENU m on o.ORDER_M_CODE=m.MENU_CODE
+JOIN MC_STORE_LOC s on o.ORDER_S_CODE= s.STORE_CODE
+
+group by s.STORE_LOC;</code></pre><p id="aabc3a1e-14e6-4542-b2ff-12522aa575d3" class="">
+</p></div></article></body></html>

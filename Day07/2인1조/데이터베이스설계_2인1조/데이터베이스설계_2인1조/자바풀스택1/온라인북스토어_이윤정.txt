@@ -1,0 +1,50 @@
+create table online_bookstore(
+  b_name varchar2(30) not null,
+  b_publisher varchar2(30) not null,
+  b_author varchar2(30) not null,
+  b_isbn number(8) not null primary key
+);
+
+
+create table online_customer(
+  c_id varchar2(30) not null primary key,
+  c_name varchar2(30) not null
+);
+
+
+create table online_order(
+  o_order NUMBER(8) not null,
+  o_id varchar2(30) not null references online_customer(c_id),
+  o_isbn number(8) not null references online_bookstore(b_isbn),
+  o_bname varchar2(20) not null
+);
+
+select * from online_customer;
+select * from online_bookstore;
+drop table online_bookstore;
+
+
+insert into online_bookstore values('연수', '창비', '장류진', 12345678);
+insert into online_bookstore values('비가 오면 열리는 상점', '클레이하우스', '유영광', 23456789);
+insert into online_bookstore values('아주 희미한 빛으로도', '문학동네', '최은영', 34567890);
+insert into online_bookstore values('아몬드', '손원평', '다즐링', 45678901);
+insert into online_bookstore values('매구를 죽이려고', '조선희', '네오픽션', 56789012);
+
+
+insert into online_customer values('abc123', '김철수');
+insert into online_customer values('bcd456', '이민준');
+insert into online_customer values('cde567', '박서윤');
+
+
+insert into online_order values(10000, 'abc123', 12345678, '연수');
+insert into online_order values(10001, 'abc123', 56789012, '매구를 죽이려고');
+insert into online_order values(10002, 'bcd456', 45678901, '아몬드');
+
+
+alter table online_order modify (o_bname varchar2(30));
+
+
+
+select * from online_customer;
+select * from online_bookstore;
+select * from online_order;

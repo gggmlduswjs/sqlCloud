@@ -1,0 +1,823 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>주제 : 게임상점</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b26a212b-7a14-4649-b0d2-1ba7aae2ae5a" class="page sans"><header><h1 class="page-title">주제 : 게임상점</h1><p class="page-description"></p></header><div class="page-body"><p id="256d1994-f6dd-4476-baf0-de5ec50ea5c8" class="">
+</p><hr id="dcdc4830-77bc-4287-b528-a4b399cee6f2"/><hr id="fe5e91f9-e85c-4f59-a294-6a076b54a68f"/><ol type="1" id="a1ad4175-5b08-4ac8-825e-a14aa6a6341b" class="numbered-list" start="1"><li><strong>mp_server 테이블:</strong><ul id="f091cf38-093c-48de-9a2b-c0bd3a4e54b8" class="bulleted-list"><li style="list-style-type:disc">엔티티: 게임 서버</li></ul><ul id="534dff98-9594-4aa5-b74e-4e0839226764" class="bulleted-list"><li style="list-style-type:disc">제약 조건:<ul id="540a35f9-b8b6-497b-a36a-da5ea6d58bdd" class="bulleted-list"><li style="list-style-type:circle"><strong>sv_code:</strong> primary key</li></ul><ul id="6e954bf0-2fd5-4322-aa59-5ea2a7b4b48d" class="bulleted-list"><li style="list-style-type:circle"><strong>sv_name:</strong> not null</li></ul></li></ul></li></ol><ol type="1" id="9f872f4d-b40f-4569-b54f-598b88fc6197" class="numbered-list" start="2"><li><strong>mp_vip 테이블:</strong><ul id="caedfcfc-e477-4afe-858f-100ee2efa3e3" class="bulleted-list"><li style="list-style-type:disc">엔티티: VIP 플레이어 등급</li></ul><ul id="8c4e267c-d3eb-43bd-add6-5c6cc6164947" class="bulleted-list"><li style="list-style-type:disc">제약 조건:<ul id="c9f3eddf-c397-454e-ba5f-7f916ecc19eb" class="bulleted-list"><li style="list-style-type:circle"><strong>grade_code:</strong> primary key</li></ul><ul id="851ec615-e598-4966-bc21-3adc6f0fc7c1" class="bulleted-list"><li style="list-style-type:circle"><strong>grade_name:</strong> not null</li></ul><ul id="df37a1b2-8040-4729-9383-fd59bf3fa793" class="bulleted-list"><li style="list-style-type:circle"><strong>grade_dr:</strong> 등급 경험치는 0 이상이어야 합니다.  (check)</li></ul></li></ul></li></ol><ol type="1" id="95349b3d-78c5-4882-b9b2-c9c881eb68c1" class="numbered-list" start="3"><li><strong>item_cubetbl 테이블:</strong><ul id="39b98843-80f2-4be7-953c-83a5d876188a" class="bulleted-list"><li style="list-style-type:disc">엔티티: 아이템 큐브</li></ul><ul id="a929e2c9-a954-4882-bc56-62b976a08797" class="bulleted-list"><li style="list-style-type:disc">제약 조건:<ul id="2813f1ad-456d-4447-9f29-07d6d5cde89f" class="bulleted-list"><li style="list-style-type:circle"><strong>item_code:</strong> primary key</li></ul><ul id="88a827fd-cbc1-46dd-a2d4-9371d444c288" class="bulleted-list"><li style="list-style-type:circle"><strong>item_name:</strong> not null, unique</li></ul><ul id="019f5af7-40cd-426d-9bf5-4f83633a5476" class="bulleted-list"><li style="list-style-type:circle"><strong>up_percent:</strong> 아이템의 강화 확률은 0보다 커야 합니다.  (check)</li></ul><ul id="2a240e61-f083-4dec-b958-1d65e75e6cba" class="bulleted-list"><li style="list-style-type:circle"><strong>item_price:</strong> not null</li></ul></li></ul></li></ol><ol type="1" id="86eee9c0-3988-495e-8a31-f607f6cb883f" class="numbered-list" start="4"><li><strong>mp_wp 테이블:</strong><ul id="94484265-39bd-4030-8015-17c61388b0ca" class="bulleted-list"><li style="list-style-type:disc">엔티티: 게임 내 무기 유형</li></ul><ul id="e83e0fab-d984-453f-bbbe-5dbbbe3ea083" class="bulleted-list"><li style="list-style-type:disc">제약 조건:<ul id="b5f93567-9dbb-4490-9393-9176188bfd95" class="bulleted-list"><li style="list-style-type:circle"><strong>wp_code:</strong> primary key</li></ul><ul id="3e3ea47f-6308-49b3-96af-cf5e3f274071" class="bulleted-list"><li style="list-style-type:circle"><strong>wp_cat:</strong> &#x27;앱솔랩스&#x27;, &#x27;파프니르&#x27;, &#x27;아케인&#x27;, 또는 null 중 하나여야 합니다. (check)</li></ul><ul id="2754df24-f344-45a0-8344-e6d4ca886c3b" class="bulleted-list"><li style="list-style-type:circle"><strong>wp_price:</strong> 기본 값은 0이며, 0 이상이어야 합니다.  (check)</li></ul></li></ul></li></ol><ol type="1" id="c1fcef14-bb7e-46a4-a255-dc4c470593de" class="numbered-list" start="5"><li><strong>mp_usertbl 테이블:</strong><ul id="84e66f70-be14-4649-b3a9-1771e9d3d679" class="bulleted-list"><li style="list-style-type:disc">엔티티: 사용자 데이터</li></ul><ul id="5dc78a38-005b-468f-b85a-7deec5e3da73" class="bulleted-list"><li style="list-style-type:disc">제약 조건:<ul id="3a6bb049-6c4f-44e5-adfb-a5567c789be3" class="bulleted-list"><li style="list-style-type:circle"><strong>user_id:</strong> primary key</li></ul><ul id="b807b0f0-67a4-4d5a-871b-1e536b014735" class="bulleted-list"><li style="list-style-type:circle"><strong>grade:</strong> mp_vip 테이블의 grade_code를 참조하는 외래 키 (foreign key)</li></ul><ul id="6097e84c-9f8d-43ab-8bb0-ce19fc637a38" class="bulleted-list"><li style="list-style-type:circle"><strong>sv_code:</strong> mp_server 테이블의 sv_code를 참조하는 외래 키 (foreign key)</li></ul></li></ul></li></ol><ol type="1" id="5613351e-fd84-4954-ae2c-4d2fc2c568f6" class="numbered-list" start="6"><li><strong>mp_store 테이블:</strong><ul id="dbc2e340-2a4f-49c0-a940-cdd092b96cbb" class="bulleted-list"><li style="list-style-type:disc">엔티티: 상점에서의 사용자 주문</li></ul><ul id="220ab06e-f1bf-49da-a879-d2975e4a4854" class="bulleted-list"><li style="list-style-type:disc">제약 조건:<ul id="91bacc5c-91f8-4fec-b8f0-75e9fe91f7c5" class="bulleted-list"><li style="list-style-type:circle"><strong>order_id:</strong> primary key</li></ul><ul id="78de122a-b9d1-4d25-a698-f483a4d9a0c8" class="bulleted-list"><li style="list-style-type:circle"><strong>user_id:</strong> mp_usertbl 테이블의 user_id를 참조하는 외래 키 (foreign key)</li></ul><ul id="f1fa54a9-b9a3-4960-a563-1c7bf4fda0ed" class="bulleted-list"><li style="list-style-type:circle"><strong>item_code:</strong> item_cubetbl 테이블의 item_code를 참조하는 외래 키 (foreign key)</li></ul><ul id="3b5f0828-abdc-4f60-82e7-4d081cdfdc9f" class="bulleted-list"><li style="list-style-type:circle"><strong>wp_code:</strong> mp_wp 테이블의 wp_code를 참조하는 외래 키 (foreign key)</li></ul><ul id="be7b2787-b5d2-4a29-a43a-e2552d92be76" class="bulleted-list"><li style="list-style-type:circle"><strong>cnt:</strong> 주문 수량은 0보다 커야 합니다.  (check)</li></ul></li></ul></li></ol><p id="8882cd6e-ade8-4403-975e-c3b0ea4d34bb" class="">
+</p><p id="b5b464a6-5f6d-41e2-8e60-97192ec3b71c" class="">
+</p><p id="6ca94090-4988-40d3-811a-d281a82cffb8" class="">
+</p><p id="16cf2cbc-b6ef-4818-a074-8d7100048e20" class="">
+</p><p id="883be828-3095-4ffd-bc4f-a4b06db2cff7" class="">
+</p><figure id="2b9280d3-99d2-4083-b470-e4c8becc59fb" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/KakaoTalk_20230823_154256461.jpg"><img style="width:1241px" src="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/KakaoTalk_20230823_154256461.jpg"/></a></figure><p id="c5713355-7d92-4062-b2b5-dda15247a659" class="">
+</p><p id="7d528215-8040-4871-b7c0-16b132a1339a" class="">
+</p><p id="40c8fa7d-a784-41b6-b71c-878ea6579927" class="">
+</p><p id="9db29ccb-f976-423d-94ee-50d1f443ec9e" class="">
+</p><hr id="d91dc87e-fbf2-49f6-b62f-0671aff996a2"/><hr id="13ebcb7f-6209-4043-b006-f5c7ac14dedc"/><p id="e5bebf6f-b71f-4c32-b7cc-1316dfda7a75" class=""><strong>mp_server Table - 서버 테이블</strong></p><table id="aa02d28a-7ed2-4d0a-b031-db6dff024101" class="simple-table"><tbody><tr id="03cad4b5-6dc3-4fa6-b680-a497bbee28ab"><td id="]Bu&lt;" class=""><strong>sv_code</strong></td><td id="F;oK" class=""><strong>sv_name</strong></td></tr><tr id="1c246e27-cdaf-4de5-8785-833209c4a959"><td id="]Bu&lt;" class="">UUU</td><td id="F;oK" class="">유니온서버</td></tr><tr id="d9aabce0-4eff-4fcd-8f61-7e4e049141b8"><td id="]Bu&lt;" class="">BBB</td><td id="F;oK" class="">버닝서버</td></tr><tr id="079d3875-be68-4e00-a941-fcdb023f7e62"><td id="]Bu&lt;" class="">RRR</td><td id="F;oK" class="">리부트서버</td></tr><tr id="24cacba2-ee5d-4a4c-80a0-c0ddfc3358c3"><td id="]Bu&lt;" class="">CCC</td><td id="F;oK" class="">크로아서버</td></tr><tr id="16f71ff7-3ed7-43a5-a078-a1c807d5eadc"><td id="]Bu&lt;" class="">PPP</td><td id="F;oK" class="">판테온서버</td></tr></tbody></table><pre id="98e51bf7-79ad-499f-8634-46f0af33b159" class="code code-wrap"><code>drop table mp_store;
+create table mp_store (
+order_id varchar2(10)
+                constraint order_id_pk11 not null primary key,
+user_id varchar2(20)
+                constraint user_id_rf11 references mp_usertbl(user_id),
+item_code varchar2(10)
+                constraint item_code_rf11 references item_cubetbl(item_code),
+wp_code varchar2(10)
+                constraint wp_code_rf11 references mp_wp(wp_code),
+cnt number (10)
+                constraint cnt_ck11 check (cnt &gt; 0)
+);
+insert into mp_store values (&#x27;O001&#x27;,&#x27;망나니식코딩&#x27;,null,&#x27;w001&#x27;,8);
+insert into mp_store values (&#x27;O002&#x27;,&#x27;하나빼면제로&#x27;,null,&#x27;w003&#x27;,9);
+insert into mp_store values (&#x27;O003&#x27;,&#x27;타락파워전사&#x27;,&#x27;C001&#x27;,null,10);
+insert into mp_store values (&#x27;0004&#x27;,&#x27;망나니식코딩&#x27;,&#x27;C003&#x27;,null,30);
+insert into mp_store values (&#x27;0002&#x27;,&#x27;망나니식코딩&#x27;,&#x27;C003&#x27;,&#x27;w002&#x27;,30);
+select * from mp_store;
+</code></pre><p id="234fd359-59cf-4a09-933e-15739ebde67a" class="">
+</p><p id="00d4654b-46f3-4dff-8ca6-c4dc8d6ca601" class="">
+</p><p id="025024c6-b21a-4958-9a3f-f19c264b8a1e" class="">
+</p><p id="ce1bb4aa-5137-4e42-868c-690b8b52c152" class=""><strong>mp_vip Table - 등급 테이블</strong></p><table id="2f347178-ee2d-48e7-843e-4b2a919e7c90" class="simple-table"><tbody><tr id="356f8d4a-acdc-4adc-8165-6cf187d7e3e3"><td id="a=&lt;b" class=""><strong>grade_code</strong></td><td id="BpyL" class=""><strong>grade_name</strong></td><td id="YmT;" class=""><strong>grade_dr</strong></td></tr><tr id="f7f086f3-332b-4251-814a-2780a4121e31"><td id="a=&lt;b" class="">V001</td><td id="BpyL" class="">레드</td><td id="YmT;" class="">10</td></tr><tr id="7e18be47-4ff2-4f70-a201-1a1610c96918"><td id="a=&lt;b" class="">V002</td><td id="BpyL" class="">골드</td><td id="YmT;" class="">7</td></tr><tr id="75d45741-7cb6-42c7-925a-84451721d93a"><td id="a=&lt;b" class="">V003</td><td id="BpyL" class="">실버</td><td id="YmT;" class="">4</td></tr><tr id="a78e1400-7b9c-4823-9e60-c9aa8c6cb2f1"><td id="a=&lt;b" class="">V004</td><td id="BpyL" class="">브론즈</td><td id="YmT;" class="">0</td></tr></tbody></table><pre id="0bd587b5-2bbb-4823-b986-f1b97f0e180a" class="code code-wrap"><code>drop table mp_vip;
+create table mp_vip(
+grade_code varchar2(10)
+constraint mp_gradetbl_pk primary key,
+grade_name varchar2(20)
+constraint mp_gradetbl_nn not null,
+grade_dr number(10)
+constraint gradetbl_dr_ck
+check (grade_dr&gt;=0)
+);
+insert into mp_vip values (&#x27;V001&#x27;, &#x27;레드&#x27;, 10);
+insert into mp_vip values (&#x27;V002&#x27;, &#x27;골드&#x27;, 7);
+insert into mp_vip values (&#x27;V003&#x27;, &#x27;실버&#x27;, 4);
+insert into mp_vip values (&#x27;V004&#x27;, &#x27;브론즈&#x27;, 0);
+select * from mp_vip;
+</code></pre><p id="55e3ff4a-df0d-44d3-8e87-5cdcce091856" class="">
+</p><p id="651834f7-1ccc-4d9b-84c7-0833abbbae3b" class="">
+</p><p id="c6e1c22d-ec45-4a25-bb10-f7ec43294ed5" class="">
+</p><p id="5d6f2822-a950-4d5e-bfc7-86ae0c73ea87" class=""><strong>item_cubetbl Table - 큐브아이템 테이블</strong></p><table id="c2818a00-39c3-46f6-b593-5ce84ed37c38" class="simple-table"><tbody><tr id="a224f337-597f-4549-b0fa-e6b73bcca7f5"><td id="?pL\" class=""><strong>item_code</strong></td><td id="@XU]" class=""><strong>item_name</strong></td><td id=";XUC" class=""><strong>up_percent</strong></td><td id="GaaY" class=""><strong>item_price</strong></td></tr><tr id="2d41501d-e8ea-4079-8f35-561e4c41a856"><td id="?pL\" class="">C001</td><td id="@XU]" class="">블랙큐브</td><td id=";XUC" class="">10</td><td id="GaaY" class="">2200</td></tr><tr id="116fb287-e540-45e1-8d5e-847236c31c5b"><td id="?pL\" class="">C002</td><td id="@XU]" class="">레드큐브</td><td id=";XUC" class="">3</td><td id="GaaY" class="">1200</td></tr><tr id="70b7bd51-826a-4ed4-9843-a8cb8197c498"><td id="?pL\" class="">C003</td><td id="@XU]" class="">에디큐브</td><td id=";XUC" class="">5</td><td id="GaaY" class="">2400</td></tr><tr id="2c5ac1df-4bd7-4660-b93d-390a37a3e2fc"><td id="?pL\" class="">C004</td><td id="@XU]" class="">명장큐브</td><td id=";XUC" class="">2</td><td id="GaaY" class="">800</td></tr><tr id="02413a12-17b1-47b3-9884-b1a7537b5284"><td id="?pL\" class=""></td><td id="@XU]" class=""></td><td id=";XUC" class=""></td><td id="GaaY" class=""></td></tr></tbody></table><pre id="d3d6dcf6-4db2-4567-a95e-32e3d78b00f6" class="code code-wrap"><code>drop table item_cubetbl;
+CREATE TABLE item_cubetbl (
+  item_code varchar2(10)
+    constraint item_cubetbl_pk primary key,
+  item_name varchar2(20)
+    constraint item_cubetbl_nn not null
+    constraint item_cubetbl_uk unique,
+  up_percent number(10)
+    constraint cubetbl_percent_ck check (up_percent&gt;0),
+  item_price number(10)
+    constraint cubetbl_price_nn not null
+);
+
+insert into item_cubetbl values(&#x27;C001&#x27;,&#x27;블랙큐브&#x27;,10,2200);
+insert into item_cubetbl values(&#x27;C002&#x27;,&#x27;레드큐브&#x27;,3,1200);
+insert into item_cubetbl values(&#x27;C003&#x27;,&#x27;에디큐브&#x27;,5,2400);
+insert into item_cubetbl values(&#x27;C004&#x27;,&#x27;명장큐브&#x27;,2,800);
+select * from item_cubetbl;
+</code></pre><p id="9d2be385-4325-40e8-930d-242e9ba21481" class="">
+</p><p id="d7a7c4af-fe5d-461a-852b-453bffba424c" class="">
+</p><p id="cffd03ca-ccff-406c-b582-482ea7fd2d99" class="">
+</p><p id="733fb0d5-0a12-4c3f-835d-055314b13942" class=""><strong>mp_wp Table - 무기 테이블</strong></p><table id="66a75f86-75ca-40e2-bb3f-16d70401d3c7" class="simple-table"><tbody><tr id="9a3b4e45-49c0-4e01-a101-ad5058b9016e"><td id="DPox" class=""><strong>wp_code</strong></td><td id="zeOW" class=""><strong>wp_cat</strong></td><td id="GqHn" class=""><strong>wp_price</strong></td></tr><tr id="59e4d232-fb97-4861-a0ee-88312c3fc5a2"><td id="DPox" class="">w001</td><td id="zeOW" class="">앱솔랩스</td><td id="GqHn" class="">5000</td></tr><tr id="c83e5c76-3d73-42b8-890a-146f4ff5c81b"><td id="DPox" class="">w002</td><td id="zeOW" class="">파프니르</td><td id="GqHn" class="">2000</td></tr><tr id="32e86036-f7a3-4322-acb6-1333f71acdc2"><td id="DPox" class="">w003</td><td id="zeOW" class="">아케인</td><td id="GqHn" class="">7000</td></tr><tr id="fa65eb96-d3c6-4c70-898a-4f410ef51fe5"><td id="DPox" class="">w004</td><td id="zeOW" class="">(null)</td><td id="GqHn" class="">0</td></tr></tbody></table><pre id="5dbda908-a61b-4610-8574-161fd3a1f64e" class="code code-wrap"><code>drop table mp_wp;
+create table mp_wp(
+  wp_code varchar2(20)
+             constraint wp_pk11_  not null primary key,
+   wp_cat varchar2(20)
+              constraint wp_cat_ch11__
+              check (wp_cat in(&#x27;앱솔랩스&#x27;,&#x27;파프니르&#x27;,&#x27;아케인&#x27;,null)),
+  wp_price number(20) default 0,
+              constraint wp_p_ch11__ check(wp_price &gt;= 0)
+  );
+  insert into mp_wp values (&#x27;w001&#x27;,&#x27;앱솔랩스&#x27;, 5000);
+  insert into mp_wp values (&#x27;w002&#x27;,&#x27;파프니르&#x27;, 2000);
+  insert into mp_wp values (&#x27;w003&#x27;,&#x27;아케인&#x27;, 7000);
+  insert into mp_wp values (&#x27;w004&#x27;,null,0);
+  select * from mp_wp;
+</code></pre><p id="de896e27-1f03-4542-bfc2-8f4fdccc1a63" class="">
+</p><p id="94ea7a57-8557-4bd5-8fe2-36033b64ceb6" class="">
+</p><p id="9ccb2177-3751-4ba7-bad6-26259f3a44df" class="">
+</p><p id="a95e57bf-29be-4dd0-944c-6b27b7228dc2" class=""><strong>mp_usertbl Table - 유저 테이블</strong></p><table id="8f6a8420-7edd-496a-a4d5-40afe801e999" class="simple-table"><tbody><tr id="cf214b8e-b53b-4edb-a4f4-d74d94d3cab4"><td id="aej;" class=""><strong>user_id</strong></td><td id="?EPx" class=""><strong>grade</strong></td><td id="WgGM" class=""><strong>sv_code</strong></td></tr><tr id="0b52dbe1-67b1-4672-9b6c-2565e759afab"><td id="aej;" class="">망나니식코딩</td><td id="?EPx" class="">V001</td><td id="WgGM" class="">CCC</td></tr><tr id="deb182f5-fecd-41f4-abfe-34faa704a35f"><td id="aej;" class="">하나빼면제로</td><td id="?EPx" class="">V002</td><td id="WgGM" class="">UUU</td></tr><tr id="a1a0a0fc-7f45-4ed6-abd3-ee2ee9b46355"><td id="aej;" class="">타락파워전사</td><td id="?EPx" class="">V004</td><td id="WgGM" class="">BBB</td></tr></tbody></table><pre id="7ba4fb2f-a7ca-40ef-91c8-50feb1cbeb14" class="code code-wrap"><code>drop table mp_usertbl;
+CREATE TABLE mp_usertbl(
+user_id varchar2(20)
+constraint mp_usertbl_pk primary key,
+grade varchar2(10)
+constraint mp_usergrade_ref references mp_vip(grade_code),
+sv_code varchar2(10)
+constraint mp_sv_ref references mp_server(sv_code)
+);
+
+insert into mp_usertbl values(&#x27;망나니식코딩&#x27;,&#x27;V001&#x27;,&#x27;CCC&#x27;);
+insert into mp_usertbl values(&#x27;하나빼면제로&#x27;,&#x27;V002&#x27;,&#x27;UUU&#x27;);
+insert into mp_usertbl values(&#x27;타락파워전사&#x27;,&#x27;V004&#x27;,&#x27;BBB&#x27;);
+select * from mp_usertbl;
+</code></pre><p id="b62c1baa-6520-4bd2-97f5-0448f7053b96" class="">
+</p><p id="015c5acc-4684-48c1-b58a-0483359f9816" class="">
+</p><p id="b767932d-1142-41a9-aa2c-2504efc4cfbb" class="">
+</p><p id="387e853c-7bcd-466d-b62c-9ecf558ccfc4" class=""><strong>mp_store Table - 주문서 테이블:</strong></p><table id="ec7857fd-7f21-4544-ada8-26d158a53b03" class="simple-table"><tbody><tr id="e0047c8b-df58-40a7-a40d-159f5e2b735c"><td id="artC" class=""><strong>order_id</strong></td><td id="Pdl~" class=""><strong>user_id</strong></td><td id="&gt;PzK" class=""><strong>item_code</strong></td><td id="`?lm" class=""><strong>wp_code</strong></td><td id="IYh:" class=""><strong>cnt</strong></td></tr><tr id="43cf5721-5c6c-410e-b252-48179233ee82"><td id="artC" class="">O001</td><td id="Pdl~" class="">망나니식코딩</td><td id="&gt;PzK" class="">(null)</td><td id="`?lm" class="">w001</td><td id="IYh:" class="">8</td></tr><tr id="7034fcd1-a1b3-4754-b77b-eceb2987525a"><td id="artC" class="">O002</td><td id="Pdl~" class="">하나빼면제로</td><td id="&gt;PzK" class="">(null)</td><td id="`?lm" class="">w003</td><td id="IYh:" class="">9</td></tr><tr id="147e2dea-5912-41cc-87b1-cf6c44083e3a"><td id="artC" class="">O003</td><td id="Pdl~" class="">타락파워전사</td><td id="&gt;PzK" class="">C001</td><td id="`?lm" class="">(null)</td><td id="IYh:" class="">10</td></tr><tr id="2f33418c-246d-4155-8710-da9c30d473db"><td id="artC" class="">O004</td><td id="Pdl~" class="">망나니식코딩</td><td id="&gt;PzK" class="">C003</td><td id="`?lm" class="">(null)</td><td id="IYh:" class="">30</td></tr><tr id="8099df61-97e7-4534-98dc-d658262ae809"><td id="artC" class="">O002</td><td id="Pdl~" class="">망나니식코딩</td><td id="&gt;PzK" class="">C003</td><td id="`?lm" class="">w002</td><td id="IYh:" class="">30</td></tr></tbody></table><pre id="c8361e1c-b795-4035-a95c-202e165bbde0" class="code code-wrap"><code>drop table mp_store;
+create table mp_store (
+order_id varchar2(10)
+constraint order_id_pk11 not null primary key,
+user_id varchar2(20)
+constraint user_id_rf11 references mp_usertbl(user_id),
+item_code varchar2(10)
+constraint item_code_rf11 references item_cubetbl(item_code),
+wp_code varchar2(10)
+constraint wp_code_rf11 references mp_wp(wp_code),
+cnt number (10)
+constraint cnt_ck11 check (cnt &gt; 0)
+);
+insert into mp_store values (&#x27;O001&#x27;,&#x27;망나니식코딩&#x27;,null,&#x27;w001&#x27;,8);
+insert into mp_store values (&#x27;O002&#x27;,&#x27;하나빼면제로&#x27;,null,&#x27;w003&#x27;,9);
+insert into mp_store values (&#x27;O003&#x27;,&#x27;타락파워전사&#x27;,&#x27;C001&#x27;,null,10);
+insert into mp_store values (&#x27;O004&#x27;,&#x27;망나니식코딩&#x27;,&#x27;C003&#x27;,null,30);
+insert into mp_store values (&#x27;O002&#x27;,&#x27;망나니식코딩&#x27;,&#x27;C003&#x27;,&#x27;w002&#x27;,30);
+select * from mp_store;
+</code></pre><p id="a51dc4ff-899f-4bb0-bbda-c1d21f282f8c" class="">
+</p><p id="e352ef4c-45d9-4367-b929-c6b8f87c1dce" class="">
+</p><p id="d450bc53-d0e4-416e-a2db-7852a9870546" class="">
+</p><p id="bbb0e582-66cb-417e-9e98-6e184c3e5120" class="">
+</p><p id="47e76760-2888-4c44-9f6f-ba91f1c550bc" class="">
+</p><p id="6942b13e-1c06-463e-88f3-348fafbd5a52" class="">
+</p><p id="0ec75832-f0fe-48d2-ac50-d0ec7c220cd2" class="">
+</p><p id="36173e27-adb5-4e8f-b76d-d7a1e11e4917" class="">
+</p><p id="e177940a-80da-4c9c-919f-81c4f24e50f9" class="">
+</p><p id="e41b2da4-b91b-459d-bf9c-d5b21c8860ba" class="">
+</p><p id="4f73f009-dc97-418a-a8cb-e171a77e05b0" class="">
+</p><p id="f25dbd33-cde0-436b-8854-fc612a182c22" class="">
+</p><hr id="49d33fad-a549-490f-af81-ab68e7c6cadc"/><hr id="a7c2acb0-ebf9-4880-9508-105f87bc7c39"/><p id="a77d750b-092f-4b57-a977-b4c05238a1a9" class="">테이블 활용 예제</p><p id="6a6b8928-5e9e-42e0-9b71-2cfc62d588a1" class="">
+</p><div id="25ef4582-a6ea-4dfe-9dbd-8cab1acfe3fd" class="column-list"><div id="50d1c895-85fa-474c-8bf0-9970924d85b6" style="width:56.25%" class="column"><figure id="df5835b1-8d7c-49fc-aee4-aa213d556a22" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/Untitled.png"><img style="width:336px" src="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/Untitled.png"/></a></figure></div><div id="d4209ae9-0f18-40bf-9cc3-a5229b22df62" style="width:43.75%" class="column"><figure id="85843c48-dc40-4d00-8b0c-12277e60a39d" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/KakaoTalk_20230823_143758035.png"><img style="width:528px" src="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/KakaoTalk_20230823_143758035.png"/></a></figure><p id="ae8a7d21-e09b-4fc6-ae15-7a75e3fed2f8" class="">
+</p></div></div><p id="42944180-04d7-4458-a9bc-d33b02316bc0" class="">
+</p><p id="f7d09715-7f3d-4303-81ce-0b5015538bd7" class="">
+</p><p id="25a9464f-c413-42f1-8919-7b616df585e5" class="">
+</p><p id="60864436-109f-4ad8-85c9-8ef47d257864" class="">
+</p><div id="7b42c40c-17b0-4e8b-af0a-5d474f82f94d" class="column-list"><div id="09a872d3-02f5-4323-8da0-a072745c86e3" style="width:56.25%" class="column"><figure id="4bc2d4d4-9c70-40e6-8ce6-8d060ad5e482" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/Untitled%201.png"><img style="width:384px" src="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/Untitled%201.png"/></a></figure></div><div id="ec4f8eb9-e199-49e0-b9c3-5e3d3e6ea0e5" style="width:43.75%" class="column"><figure id="660c19ab-b110-4e04-a4ed-a299639bd5a9" class="image"><a href="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/Untitled%202.png"><img style="width:336px" src="%E1%84%8C%E1%85%AE%E1%84%8C%E1%85%A6%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7%20b26a212b7a144649b0d21ba7aae2ae5a/Untitled%202.png"/></a></figure><p id="7ffffb93-e775-4758-9484-22b036f71a49" class="">
+</p></div></div><p id="d8a83529-9693-4b80-8395-760cafc82554" class=""><code><strong>SUM</strong></code> 대신에 <code><strong>MAX</strong></code> 함수를 사용해야 하는 이유는 각 주문에 대한 항목마다 합계를 구하는 것이 아니라, 주문당 하나의 항목에 대한 최대값을 가져와야 하기 때문입니다.</p><p id="db654aca-ce5f-4596-89ac-2d7647438419" class="">
+</p><p id="2fcc943a-b68e-42f1-b20e-d76201ae70c1" class="">아이템코드와 무기코드를 따로 받아오기 때문에 case문을 이용하여 각 코드별 null값이 아닌 code의 총액을 구하기 위해  is not null을 이용했습니다.</p><p id="3b26e1bd-b592-4247-8531-709f81c1e0dd" class="">
+</p><p id="bc38dfeb-752d-476a-819a-cb65146706d7" class=""> 주문 테이블의 각 주문은 하나의 상품 또는 무기와 연결되어 있습니다. 하지만 모든 주문이 상품 또는 무기와 연결되어 있지는 않기 때문에  left join을 사용했습니다.</p><p id="8119428b-5544-4b4b-b8f9-ff9b830cd51c" class="">
+</p></div></article></body></html>

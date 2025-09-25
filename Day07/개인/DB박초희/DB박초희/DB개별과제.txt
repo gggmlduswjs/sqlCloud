@@ -1,0 +1,64 @@
+CREATE TABLE store_tbl(
+  category VARCHAR2(3) NOT NULL 
+		CHECK(category IN('R', 'C', 'B')), 
+  cd VARCHAR2(10) NOT NULL PRIMARY KEY
+		CHECK(s_code LIKE 'R%' OR s_code LIKE 'C%' OR s_code LIKE 'B%'), 
+  name VARCHAR2(20)  NOT NULL, 
+  location VARCHAR2(50)  NOT NULL, 
+  tel VARCHAR2(13) CHECK(tel LIKE '%-%-%')
+);
+commit;
+
+ALTER TABLE store_tbl RENAME COLUMN cd TO s_code;
+ALTER TABLE store_tbl MODIFY location VARCHAR2(30);
+commit;
+
+DESC store_tbl;
+
+//제약조건 확인
+INSERT INTO store_tbl VALUES('D','R0001','MP김밥','마포구 양화로','02-123-4567');
+INSERT INTO store_tbl VALUES('R','R0001','MP김밥','마포구 양화로','02-123');
+INSERT INTO store_tbl VALUES('R','D0001','MP김밥','마포구 양화로','02-123-4567');
+
+//데이터 추가
+INSERT INTO store_tbl VALUES('R','R0001','MP김밥','마포구 양화로','02-123-4567');
+INSERT INTO store_tbl VALUES('C','C0001','서교카페','마포구 양화로', NULL);
+INSERT INTO store_tbl VALUES('R','R0002','H파스타','마포구 홍익로','02-134-5678');
+INSERT INTO store_tbl VALUES('B','B0001','H베이커리','마포구 동교로','02-567-8901');
+commit;
+
+SELECT * FROM store_tbl;
+
+
+CREATE TABLE review_tbl(
+  no NUMBER(2) NOT NULL PRIMARY KEY, 
+  id VARCHAR2(15) NOT NULL, 
+  s_code VARCHAR2(10) NOT NULL REFERENCES store_tbl(s_code), 
+  r_rating NUMBER(1) NOT NULL
+	  CHECK (0<=r_rating AND r_rating<=5), 
+  visit_num NUMBER(3) NOT NULL 
+);
+commit;
+
+ALTER TABLE review_tbl MODIFY no NUMBER(4);
+ALTER TABLE review_tbl MODIFY r_rating NUMBER(2,1);
+commit;
+
+DESC review_tbl;
+
+//제약조건 확인
+INSERT INTO review_tbl VALUES(2,'bca22','D0002', 4.1 , 2);
+INSERT INTO review_tbl VALUES(2,'bca22','R0002', 5.1 , 2);
+
+//데이터 추가
+INSERT INTO review_tbl VALUES(1,'abc11','B0001', 4.7 , 1);
+INSERT INTO review_tbl VALUES(2,'bca22','R0002', 4.1 , 2);
+INSERT INTO review_tbl VALUES(3,'cab33','R0001', 3.8 , 5);
+INSERT INTO review_tbl VALUES(4,'cdb44','B0001', 4 , 2);
+INSERT INTO review_tbl VALUES(5,'abc11','C0001', 3.2 , 3);
+INSERT INTO review_tbl VALUES(6,'dbc55','R0001', 5 , 4);
+INSERT INTO review_tbl VALUES(7,'cab33','C0001', 3.5 , 1);
+INSERT INTO review_tbl VALUES(8,'dbc55','B0001', 4.3 , 6);
+commit;
+
+SELECT * FROM review_tbl;

@@ -1,0 +1,37 @@
+create table online_bookstore(
+  b_name varchar2(30) not null,
+  b_publisher varchar2(30) not null,
+  b_author varchar2(30) not null,
+  b_isbn number(8) not null primary key
+);
+
+
+create table online_customer(
+  c_id varchar2(30) not null primary key,
+  c_name varchar2(30) not null
+);
+
+
+create table online_order(
+  o_order NUMBER(8) not null,
+  o_id varchar2(30) not null references online_customer(c_id),
+  o_isbn number(8) not null references online_bookstore(b_isbn),
+  o_bname varchar2(20) not null
+);
+
+
+insert into online_bookstore values('연수', '창비', '장류진', 12345678);
+insert into online_publisher values('선량한 차별주의자', '창비', '김지혜', 23456789);
+insert into online_publisher values('노 휴먼스 랜드', '창비', '김정', 34567890);
+insert into online_publisher values('제주도우다3', '창비', '현기영', 45678901);
+insert into online_publisher values('조용희 청소기', '창비', '김보라', 56789012);
+
+
+insert into online_customer values('abc123', '김철수');
+insert into online_customer values('bcd456', '이민준');
+insert into online_customer values('cde567', '박서윤');
+
+
+insert into online_order values(10000, 'abc123', 23456789, '선량한 차별주의자');
+insert into online_order values(10001, 'abc123', 34567890, '노 휴먼스 랜드');
+insert into online_order values(10002, 'bcd456', 45678901, '제주도우다3');

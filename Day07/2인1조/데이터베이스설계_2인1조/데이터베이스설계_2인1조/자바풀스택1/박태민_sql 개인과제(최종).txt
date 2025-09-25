@@ -1,0 +1,81 @@
+-- 하이브 산하 레이블
+create table lables(
+lables_nm varchar2(15) not null unique,
+ceo varchar2(15),
+establishment_date date,
+address varchar2(50) not null
+);
+insert into lables values('빅히트', '신영재', '20210701', '용산구 한강대로 42');
+insert into lables values('쏘스뮤직', '김주영', '20091117', '용산구 한강대로 42');
+insert into lables values('플레디스', '이다혜', '20100705', '용산구 한강대로 42');
+insert into lables values('어도어', '민희진', '20211112', '용산구 한강대로 42');
+select * from lables;
+
+-- 레이블 소재 층수
+create table address(
+lables_nm varchar2(15),
+address varchar2(50),
+floors number(2)
+);
+insert into address values('플레디스', '용산구 한강대로 42', 13);
+insert into address values('빅히트', '용산구 한강대로 42', 15);
+insert into address values('쏘스뮤직', '용산구 한강대로 42', 16);
+insert into address values('어도어', '용산구 한강대로 42', 16);
+select * from address;
+
+-- 레이블 소속 가수
+create table singer(
+group_nm varchar2(50) not null primary key,
+members number(2) check(0<members) not null,
+debut_date date,
+lables_nm varchar2(15) references lables(lables_nm)
+);
+insert into singer values('방탄소년단', 7, '20130613', '빅히트');
+insert into singer values('투모로우바이투게더', 5, '20190304', '빅히트');
+insert into singer values('르세라핌', 5, '20220502', '쏘스뮤직');
+insert into singer values('세븐틴', 13, '20150526', '플레디스');
+insert into singer values('프로미스나인', 8, '20180124', '플레디스');
+insert into singer values('뉴진스', 5, '20220722', '어도어');
+select * from singer;
+
+-- 전체 테이블 조인 후 데이터 추출
+select *
+from singer s
+join lables l
+on s.레이블명 = l.레이블명
+join address addr
+on l.레이블명 = addr.레이블명;
+
+alter table lables rename column lables_nm to 레이블명;
+alter table lables rename column establishment_date to 설립일;
+alter table lables rename column 주소 to 소재지;
+update lables
+set ceo='한성수'
+where 레이블명='플레디스';
+select * from lables;
+
+alter table address rename column 주소 to 소재지;
+alter table address rename column lables_nm to 레이블명;
+alter table address rename column floors to 층수;
+select * from address;
+
+alter table singer rename column group_nm to 그룹명;
+alter table singer rename column members to 그룹인원;
+alter table singer rename column debut_date to 데뷔일;
+alter table singer rename column lables_nm to 레이블명;
+select * from singer;
+
+select
+s.그룹명,
+s.그룹인원,
+s.데뷔일,
+s.레이블명,
+l.ceo,
+l.설립일,
+l.소재지,
+addr.층수||'층'
+from singer s
+join lables l
+on s.레이블명 = l.레이블명
+join address addr
+on l.레이블명 = addr.레이블명;

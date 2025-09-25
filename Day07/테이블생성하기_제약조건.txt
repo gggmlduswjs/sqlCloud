@@ -1,0 +1,35 @@
+-- 이렇게 하면 제약조건의 이름으로 삭제하거나 그러기 쉽다
+-- 제약조건 제대로 주기 
+
+
+create table new_emp1 (
+   no number(4) 
+   constraint emp1_no_pk primary key,
+   name varchar2(20) 
+   constraint emp1_name_nn not null,
+   jumin varchar2(13)
+   constraint emp1_jumin_nn not null 
+   constraint emp1_jumin_uk unique,
+   loc_code number(1) 
+   constraint emp1_area_ck check( loc_code  <5 ) ,
+   deptno varchar2(6)
+   constraint emp1_deptno_fk references dept2(dcode)
+);
+
+
+
+ 
+
+create table new_emp2(
+    no number(4) primary key,
+    name varchar2(20) not null ,
+    jumin varchar2(13) not null unique,
+    loc_code number(1) check( loc_code <5),
+    deptno varchar2(6) references dept2(dcode )
+);
+
+
+
+
+--제약조건 삭제하기
+alter table  new_emp1 drop  constraint   emp1_no_pk;

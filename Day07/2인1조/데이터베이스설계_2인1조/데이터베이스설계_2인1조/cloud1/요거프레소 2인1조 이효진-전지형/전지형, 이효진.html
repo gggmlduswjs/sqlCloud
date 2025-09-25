@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요거프레소_2인1조(전지형, 이효진)</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        p {
+            margin: 0.5em 0;
+        }
+        ul {
+            margin: 1em 0;
+            padding-left: 20px;
+        }
+        li {
+            list-style-type: disc;
+        }
+        code {
+            background-color: #f9f2f4;
+            color: #c7254e;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+        .highlight {
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+            font-family: 'Arial', sans-serif;
+            text-align: left;
+        }
+        table th, table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f2f2f2;
+        }
+
+        pre {
+            background-color: #f0f0f0; /* 코드 영역 배경색 */
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>요거프레소_2인1조(전지형, 이효진)</h1>
+
+    <h3>대상 선정</h3>
+    <ul>
+        <li>카페: 요거프레소 주문</li>
+    </ul>
+
+    <h3>테이블 명칭</h3>
+
+    <p><strong>menu_yp</strong></p>
+    <ul>
+        <li><code>menu_id</code>: 메뉴의 <span class="highlight">아이디</span></li>
+        <li><code>menu_name</code>: 메뉴의 <span class="highlight">이름</span></li>
+        <li><code>menu_price</code>: 메뉴의 <span class="highlight">가격</span></li>
+        <li><code>menu_category</code>: 메뉴의 <span class="highlight">카테고리</span></li>
+    </ul>
+
+    <h3>도메인 제약 조건</h3>
+    <ul>
+        <li><code>menu_name</code>: <span class="highlight">not null</span></li>
+        <li><code>menu_category</code>: <span class="highlight">check</span></li>
+    </ul>
+
+    <h3>엔티티 제약 조건</h3>
+    <ul>
+        <li><code>menu_id</code>: <span class="highlight">primary key</span></li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>메뉴코드</th>
+                <th>메뉴명</th>
+                <th>가격</th>
+                <th>카테고리</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>M001</td>
+                <td>아메리카노</td>
+                <td>1900</td>
+                <td>커피</td>
+            </tr>
+            <tr>
+                <td>M002</td>
+                <td>카페라떼</td>
+                <td>3500</td>
+                <td>커피</td>
+            </tr>
+            <tr>
+                <td>M003</td>
+                <td>콜드브루</td>
+                <td>4000</td>
+                <td>커피</td>
+            </tr>
+            <tr>
+                <td>M004</td>
+                <td>초코라떼</td>
+                <td>4500</td>
+                <td>논-커피</td>
+            </tr>
+            <tr>
+                <td>M005</td>
+                <td>고구마라떼</td>
+                <td>4500</td>
+                <td>논-커피</td>
+            </tr>
+            <tr>
+                <td>M006</td>
+                <td>흑임자라떼</td>
+                <td>4500</td>
+                <td>논-커피</td>
+            </tr>
+            <tr>
+                <td>M007</td>
+                <td>아이스티</td>
+                <td>4300</td>
+                <td>에이드/차</td>
+            </tr>
+            <tr>
+                <td>M008</td>
+                <td>허브티</td>
+                <td>4500</td>
+                <td>에이드/차</td>
+            </tr>
+            <tr>
+                <td>M009</td>
+                <td>상그리아티</td>
+                <td>4800</td>
+                <td>에이드/차</td>
+            </tr>
+            <tr>
+                <td>M010</td>
+                <td>딸기스무디</td>
+                <td>4300</td>
+                <td>스무디</td>
+            </tr>
+            <tr>
+                <td>M011</td>
+                <td>망고스무디</td>
+                <td>4300</td>
+                <td>스무디</td>
+            </tr>
+            <tr>
+                <td>M012</td>
+                <td>블루베리스무디</td>
+                <td>4300</td>
+                <td>스무디</td>
+            </tr>
+            <tr>
+                <td>M013</td>
+                <td>밀크쉐이크</td>
+                <td>4300</td>
+                <td>아이스 블렌딩</td>
+            </tr>
+            <tr>
+                <td>M014</td>
+                <td>요프치노</td>
+                <td>4800</td>
+                <td>아이스 블렌딩</td>
+            </tr>
+            <tr>
+                <td>M015</td>
+                <td>치즈프라페</td>
+                <td>5500</td>
+                <td>아이스 블렌딩</td>
+            </tr>
+            <tr>
+                <td>M016</td>
+                <td>흑당버블티</td>
+                <td>5800</td>
+                <td>버블티</td>
+            </tr>
+            <tr>
+                <td>M017</td>
+                <td>말차버블티</td>
+                <td>5800</td>
+                <td>버블티</td>
+            </tr>
+            <tr>
+                <td>M018</td>
+                <td>쇼콜라버블티</td>
+                <td>5800</td>
+                <td>버블티</td>
+            </tr>
+            <tr>
+                <td>M019</td>
+                <td>한입요거트 플레인</td>
+                <td>4000</td>
+                <td>요거트</td>
+            </tr>
+            <tr>
+                <td>M020</td>
+                <td>한입요거트 망고</td>
+                <td>4800</td>
+                <td>요거트</td>
+            </tr>
+            <tr>
+                <td>M021</td>
+                <td>한입요거트 치즈</td>
+                <td>4800</td>
+                <td>요거트</td>
+            </tr>
+            <tr>
+                <td>M022</td>
+                <td>크로플</td>
+                <td>3500</td>
+                <td>디저트</td>
+            </tr>
+            <tr>
+                <td>M023</td>
+                <td>허니브레드</td>
+                <td>4500</td>
+                <td>디저트</td>
+            </tr>
+            <tr>
+                <td>M024</td>
+                <td>크로크무슈</td>
+                <td>4000</td>
+                <td>디저트</td>
+            </tr>
+            <tr>
+                <td>M025</td>
+                <td>베이글</td>
+                <td>3500</td>
+                <td>디저트</td>
+            </tr>
+            <tr>
+                <td>M026</td>
+                <td>티라미수 케이크</td>
+                <td>5500</td>
+                <td>디저트</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>테이블 명칭</h3>
+
+    <p><strong>customer_yp</strong></p>
+    <ul>
+        <li><code>customer_id</code>: 고객의 <span class="highlight">아이디</span></li>
+        <li><code>customer_name</code>: 고객의 <span class="highlight">이름</span></li>
+        <li><code>phone_number</code>: 고객의 <span class="highlight">전화번호</span></li>
+        <li><code>membership_grade</code>: 멤버쉽 <span class="highlight">등급</span></li>
+    </ul>
+
+    <h3>도메인 제약 조건</h3>
+    <ul>
+        <li><code>customer_name</code>: <span class="highlight">not null</span></li>
+        <li><code>phone_number</code>: <span class="highlight">check</span></li>
+        <li><code>membership_grade</code>: <span class="highlight">check</span></li>
+    </ul>
+
+    <h3>엔티티 제약 조건</h3>
+    <ul>
+        <li><code>customer_id</code>: <span class="highlight">primary key</span></li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>고객코드</th>
+                <th>고객명</th>
+                <th>전화번호</th>
+                <th>멤버십 등급</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>C001</td>
+                <td>임수정</td>
+                <td>010-1111-1111</td>
+                <td>골드</td>
+            </tr>
+            <tr>
+                <td>C002</td>
+                <td>김태희</td>
+                <td>010-2222-2222</td>
+                <td>실버</td>
+            </tr>
+            <tr>
+                <td>C003</td>
+                <td>유인영</td>
+                <td>010-3333-3333</td>
+                <td>브론즈</td>
+            </tr>
+            <tr>
+                <td>C004</td>
+                <td>정은지</td>
+                <td>010-4444-4444</td>
+                <td>실버</td>
+            </tr>
+            <tr>
+                <td>C005</td>
+                <td>원빈</td>
+                <td>010-5555-5555</td>
+                <td>브론즈</td>
+            </tr>
+            <tr>
+                <td>C006</td>
+                <td>송강</td>
+                <td>010-6666-6666</td>
+                <td>골드</td>
+            </tr>
+            <tr>
+                <td>C007</td>
+                <td>주우재</td>
+                <td>010-7777-7777</td>
+                <td>브론즈</td>
+            </tr>
+            <tr>
+                <td>C008</td>
+                <td>이이경</td>
+                <td>010-8888-8888</td>
+                <td>실버</td>
+            </tr>
+            <tr>
+                <td>C009</td>
+                <td>미주</td>
+                <td>010-9999-9999</td>
+                <td>실버</td>
+            </tr>
+            <tr>
+                <td>C010</td>
+                <td>김준현</td>
+                <td>010-1234-1010</td>
+                <td>골드</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>테이블 명칭</h3>
+
+    <p><strong>order_yp</strong></p>
+    <ul>
+        <li><code>order_id </code>: 주문 <span class="highlight">아이디</span></li>
+        <li><code>customer_id </code>: 고객의 <span class="highlight">아이디</span></li>
+        <li><code>menu_id </code>: 메뉴의 <span class="highlight">아이디</span></li>
+        <li><code>menu_number </code>: 메뉴의 <span class="highlight">수량</span></li>
+        <li><code>total_amount  </code>: 총 <span class="highlight">수량</span></li>
+        <li><code>order_date  </code>: 주문 <span class="highlight">날짜</span></li>
+    </ul>
+
+    <h3>도메인 제약 조건</h3>
+    <ul>
+        <li><code>menu_number</code>: <span class="highlight">not null</span></li>
+        <li><code>total_amount</code>: <span class="highlight">not null</span></li>
+        <li><code>order_date</code>: <span class="highlight">not null</span></li>
+    </ul>
+
+    <h3>엔티티 제약 조건</h3>
+    <ul>
+        <li><code>order_id</code>: <span class="highlight">primary key</span></li>
+        <li><code>FOREIGN KEY (customer_id) references customer_yp(customer_id)</code>: <span class="highlight">foreign key</span></li>
+        <li><code>FOREIGN KEY (menu_id) references menu_yp(menu_id)</code>: <span class="highlight">foreign key</span></li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>주문코드</th>
+                <th>고객코드</th>
+                <th>메뉴코드</th>
+                <th>주문수량</th>
+                <th>총 주문금액</th>
+                <th>주문날짜</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>C001</td>
+                <td>M007</td>
+                <td>1</td>
+                <td>4300</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>C001</td>
+                <td>M022</td>
+                <td>1</td>
+                <td>3500</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>C008</td>
+                <td>M001</td>
+                <td>1</td>
+                <td>1900</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>C005</td>
+                <td>M019</td>
+                <td>1</td>
+                <td>4000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>005</td>
+                <td>C004</td>
+                <td>M018</td>
+                <td>1</td>
+                <td>5800</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>006</td>
+                <td>C004</td>
+                <td>M023</td>
+                <td>1</td>
+                <td>4500</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>007</td>
+                <td>C001</td>
+                <td>M008</td>
+                <td>1</td>
+                <td>4500</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>008</td>
+                <td>C005</td>
+                <td>M003</td>
+                <td>1</td>
+                <td>4000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>009</td>
+                <td>C002</td>
+                <td>M009</td>
+                <td>2</td>
+                <td>9600</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>010</td>
+                <td>C007</td>
+                <td>M016</td>
+                <td>1</td>
+                <td>5800</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>011</td>
+                <td>C003</td>
+                <td>M010</td>
+                <td>4</td>
+                <td>17200</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>012</td>
+                <td>C006</td>
+                <td>M002</td>
+                <td>2</td>
+                <td>7000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>013</td>
+                <td>C009</td>
+                <td>M014</td>
+                <td>1</td>
+                <td>4800</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>014</td>
+                <td>C008</td>
+                <td>M020</td>
+                <td>2</td>
+                <td>9600</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>015</td>
+                <td>C008</td>
+                <td>M019</td>
+                <td>5</td>
+                <td>20000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>016</td>
+                <td>C010</td>
+                <td>M004</td>
+                <td>4</td>
+                <td>18000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>017</td>
+                <td>C010</td>
+                <td>M022</td>
+                <td>2</td>
+                <td>7000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>018</td>
+                <td>C010</td>
+                <td>M023</td>
+                <td>1</td>
+                <td>4500</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>019</td>
+                <td>C010</td>
+                <td>M026</td>
+                <td>3</td>
+                <td>16500</td>
+                <td>2024-09-10</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h1>전체 결과조회</h1>
+    <p>
+        select <br>
+        o.order_id as "주문코드",<br>
+        c.membership_grade as "멤버쉽 등급",<br>
+        c.customer_name as "고객이름",<br>
+        m.menu_category as "카테고리",<br>
+        m.menu_name as "메뉴이름",<br>
+        o.menu_number as "주문수량",<br>
+        o.total_amount as "총 주문금액",<br>
+        o.order_date as "주문날짜"    <br>
+    from order_yp o<br>
+    join customer_yp c<br>
+    on o.customer_id = c.customer_id<br>
+    join menu_yp m<br>
+    on o.menu_id = m.menu_id;<br>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>주문코드</th>
+                <th>멤버쉽 등급</th>
+                <th>고객이름</th>
+                <th>카테고리</th>
+                <th>메뉴이름</th>
+                <th>주문수량</th>
+                <th>총 주문금액</th>
+                <th>주문날짜</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>골드</td>
+                <td>임수정</td>
+                <td>에이드/차</td>
+                <td>아이스티</td>
+                <td>1</td>
+                <td>4300</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>골드</td>
+                <td>임수정</td>
+                <td>디저트</td>
+                <td>크로플</td>
+                <td>1</td>
+                <td>3500</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>실버</td>
+                <td>이이경</td>
+                <td>커피</td>
+                <td>아메리카노</td>
+                <td>1</td>
+                <td>1900</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>브론즈</td>
+                <td>원빈</td>
+                <td>요거트</td>
+                <td>한입요거트 플레인</td>
+                <td>1</td>
+                <td>4000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>005</td>
+                <td>실버</td>
+                <td>정은지</td>
+                <td>버블티</td>
+                <td>쇼콜라버블티</td>
+                <td>1</td>
+                <td>5800</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>006</td>
+                <td>실버</td>
+                <td>정은지</td>
+                <td>디저트</td>
+                <td>허니브레드</td>
+                <td>1</td>
+                <td>4500</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>007</td>
+                <td>골드</td>
+                <td>임수정</td>
+                <td>에이드/차</td>
+                <td>허브티</td>
+                <td>1</td>
+                <td>4500</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>008</td>
+                <td>브론즈</td>
+                <td>원빈</td>
+                <td>커피</td>
+                <td>콜드브루</td>
+                <td>1</td>
+                <td>4000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>009</td>
+                <td>실버</td>
+                <td>김태희</td>
+                <td>에이드/차</td>
+                <td>상그리아티</td>
+                <td>2</td>
+                <td>9600</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>010</td>
+                <td>브론즈</td>
+                <td>주우재</td>
+                <td>버블티</td>
+                <td>흑당버블티</td>
+                <td>1</td>
+                <td>5800</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>011</td>
+                <td>브론즈</td>
+                <td>유인영</td>
+                <td>스무디</td>
+                <td>딸기스무디</td>
+                <td>4</td>
+                <td>17200</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>012</td>
+                <td>골드</td>
+                <td>송강</td>
+                <td>커피</td>
+                <td>카페라떼</td>
+                <td>2</td>
+                <td>7000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>013</td>
+                <td>실버</td>
+                <td>미주</td>
+                <td>아이스 블렌딩</td>
+                <td>요프치노</td>
+                <td>1</td>
+                <td>4800</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>014</td>
+                <td>실버</td>
+                <td>이이경</td>
+                <td>요거트</td>
+                <td>한입요거트 망고</td>
+                <td>2</td>
+                <td>9600</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>015</td>
+                <td>실버</td>
+                <td>이이경</td>
+                <td>요거트</td>
+                <td>한입요거트 플레인</td>
+                <td>5</td>
+                <td>20000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>016</td>
+                <td>골드</td>
+                <td>김준현</td>
+                <td>논-커피</td>
+                <td>초코라떼</td>
+                <td>4</td>
+                <td>18000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>017</td>
+                <td>골드</td>
+                <td>김준현</td>
+                <td>디저트</td>
+                <td>크로플</td>
+                <td>2</td>
+                <td>7000</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>018</td>
+                <td>골드</td>
+                <td>김준현</td>
+                <td>디저트</td>
+                <td>허니브레드</td>
+                <td>1</td>
+                <td>4500</td>
+                <td>2024-09-10</td>
+            </tr>
+            <tr>
+                <td>019</td>
+                <td>골드</td>
+                <td>김준현</td>
+                <td>디저트</td>
+                <td>티라미수 케이크</td>
+                <td>3</td>
+                <td>16500</td>
+                <td>2024-09-10</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h1>SQL</h1>
+    <pre>
+-- 메뉴테이블
+create table menu_yp(
+    menu_id VARCHAR(10) PRIMARY KEY,
+    menu_name VARCHAR(100) NOT NULL,
+    menu_price INT,
+    menu_category VARCHAR(100) CHECK
+    (menu_category IN ('커피','논-커피','에이드/차','스무디','아이스 블렌딩','버블티','요거트','디저트'))
+);
+-- 고객테이블
+CREATE TABLE customer_yp (
+    customer_id VARCHAR(50) PRIMARY KEY,
+    customer_name VARCHAR(100) NOT NULL,
+    phone_number VARCHAR(15) CHECK (phone_number LIKE '010-____-____') NOT NULL,
+    membership_grade VARCHAR(10) CHECK (membership_grade IN ('브론즈', '실버', '골드'))
+);
+--------------------------------------------------------------------------------테이블
+
+-- 메뉴 추가
+-- 커피
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M001','아메리카노',1900,'커피');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M002','카페라떼',3500,'커피');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M003','콜드브루',4000,'커피');
+-- 논 커피
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M004','초코라떼',4500,'논-커피');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M005','고구마라떼',4500,'논-커피');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M006','흑임자라떼',4500,'논-커피');
+-- ADE OR TEA
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M007','아이스티',4300,'에이드/차');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M008','허브티',4500,'에이드/차');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M009','상그리아티',4800,'에이드/차');
+-- 스무디
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M010','딸기스무디',4300,'스무디');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M011','망고스무디',4300,'스무디');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M012','블루베리스무디',4300,'스무디');
+--아이스 블렌디드
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M013','밀크쉐이크',4300,'아이스 블렌딩');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M014','요프치노',4800,'아이스 블렌딩');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M015','치즈프라페',5500,'아이스 블렌딩');
+--버블티
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M016','흑당버블티',5800,'버블티');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M017','말차버블티',5800,'버블티');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M018','쇼콜라버블티',5800,'버블티');
+--요거트
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M019','한입요거트 플레인',4000,'요거트');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M020','한입요거트 망고',4800,'요거트');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M021','한입요거트 치즈',4800,'요거트');
+--디저트
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M022','크로플',3500,'디저트');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M023','허니브레드',4500,'디저트');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M024','크로크무슈',4000,'디저트');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M025','베이글',3500,'디저트');
+insert into menu_yp(menu_id,menu_name,menu_price,menu_category)
+VALUES ('M026','티라미수 케이크',5500,'디저트');
+
+-- 고객정보 추가
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C001', '임수정', '010-1111-1111', '골드');
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C002', '김태희', '010-2222-2222', '실버');
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C003', '유인영', '010-3333-3333', '브론즈');
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C004', '정은지', '010-4444-4444', '실버');
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C005', '원빈', '010-5555-5555', '브론즈');
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C006', '송강', '010-6666-6666', '골드');
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C007', '주우재', '010-7777-7777', '브론즈');
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C008', '이이경', '010-8888-8888', '실버');
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C009', '미주', '010-9999-9999', '실버');
+INSERT INTO customer_yp (customer_id, customer_name, phone_number, membership_grade)
+VALUES ('C010', '김준현', '010-1234-1010', '골드');
+
+-- 고객테이블 조회
+select * from customer_yp;
+--전체조회
+select
+    customer_id as "고객코드",
+    customer_name as "이름",
+    phone_number as "전화번호",
+    membership_grade as "멤버쉽 등급"
+from customer_yp;
+
+-- 메뉴테이블 조회
+select * from menu_yp;
+--전체조회
+select
+    menu_id as "메뉴코드",
+    menu_name as "메뉴명",
+    menu_price as "가격",
+    menu_category as "카테고리"
+from menu_yp;
+
+--- 주문테이블
+create table order_yp(
+    order_id VARCHAR(50) PRIMARY KEY, --주문id
+    customer_id VARCHAR(50), --고객id
+    menu_id VARCHAR(10), -- 메뉴id
+    menu_number int not null, -- 주문 수량
+    total_amount int not null, -- 총 주문금액
+    order_date date not null, -- 주문날짜
+    FOREIGN KEY (customer_id) references customer_yp(customer_id), --외래키
+    FOREIGN KEY (menu_id) references menu_yp(menu_id)  --외래키
+    );
+
+select * from order_yp;
+
+select *
+from customer_yp c
+join menu_yp m
+on m.menu_id = c.customer_id
+join order_yp o
+on o.order_id = m.menu_id;
+
+--주문추가                                                                                              
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('001', 'C001', 'M007', 1, 4300, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('002', 'C001', 'M022', 1, 3500, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('003', 'C008', 'M001', 1, 1900, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('004', 'C005', 'M019', 1, 4000, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('005', 'C004', 'M018', 1, 5800, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('006', 'C004', 'M023', 1, 4500, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('007', 'C001', 'M008', 1, 4500, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('008', 'C005', 'M003', 1, 4000, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('009', 'C002', 'M009', 2, 9600, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('010', 'C007', 'M016', 1, 5800, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('011', 'C003', 'M010', 4, 17200, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('012', 'C006', 'M002', 2, 7000, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('013', 'C009', 'M014', 1, 4800, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('014', 'C008', 'M020', 2, 9600, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('015', 'C008', 'M019', 5, 20000, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('016', 'C010', 'M004', 4, 18000, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('017', 'C010', 'M022', 2, 7000, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('018', 'C010', 'M023', 1, 4500, '2024-09-10');
+insert into order_yp(order_id, customer_id, menu_id, menu_number, total_amount, order_date)values ('019', 'C010', 'M026', 3, 16500, '2024-09-10');
+-- 결과 조회
+select
+    o.order_id as "주문코드",
+    c.membership_grade as "멤버쉽 등급",
+    c.customer_name as "고객이름",
+    m.menu_category as "카테고리",
+    m.menu_name as "메뉴이름",
+    o.menu_number as "주문수량",
+    o.total_amount as "총 주문금액",
+    o.order_date as "주문날짜"    
+from order_yp o
+join customer_yp c
+on o.customer_id = c.customer_id
+join menu_yp m
+on o.menu_id = m.menu_id;
+</pre>
+</body>
+</html>

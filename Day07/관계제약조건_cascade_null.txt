@@ -1,0 +1,37 @@
+
+// 외래키 설정시    Delete constraint  , update constraint  
+//기본제약조건이  Restricted  //참조하고 있으면 삭제못함                 ==> 별도의 설정이 필요없음 기본값
+//            cascade    // 참조하고 있는 모든 것이 삭제됨                    ==>  on delete cascade
+//            nullify    // 참조하고 있는 것이   null로 채워짐                  ==>  on delete set null 
+
+
+create table ctbl ( id varchar2(10) primary key , name varchar2(10) )  ;
+create table otbl ( code varchar2(10) primary key,  iid  varchar2(10) references ctbl (id) on delete cascade );
+
+
+insert into ctbl values( 't1' ,  'kim');
+insert into ctbl values( 't2'  , 'choi');
+insert into otbl values( 'o1', 't1');
+insert into otbl values( 'o2', 't1');
+commit;
+
+delete  from ctbl where id  ='t1';   //  t1고객 삭제시   t1을 참조하는 주문정보가 모두 삭제가 됨
+select * from  otbl; //  주문정보가 모두 삭제된것을 확인 할 수 있다.
+
+
+
+
+create table ctbl2 ( id varchar2(10) primary key , name varchar2(10) )  ;
+create table otbl2 ( code varchar2(10) primary key,  iid  varchar2(10) references ctbl2 (id) on delete set null );
+
+
+insert into ctbl2 values( 't1' ,  'kim');
+insert into ctbl2 values( 't2'  , 'choi');
+insert into otbl2 values( 'o1', 't1');
+insert into otbl2 values( 'o2', 't1');
+
+
+commit;
+
+delete  from ctbl2 where id  ='t1';   //  t1고객 삭제시   t1을 참조하는 주문정보가 모두 삭제가 됨
+select * from  otbl2; //  주문정보가 모두 삭제된것을 확인 할 수 있다.

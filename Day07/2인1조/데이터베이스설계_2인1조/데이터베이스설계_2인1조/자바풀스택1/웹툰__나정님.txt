@@ -1,0 +1,77 @@
+CREATE TABLE webtoon_comic
+(
+num varchar2(30) not null primary key,
+title VARCHAR2(30) NOT NULL ,
+episode VARCHAR2(30) not null, 
+name varchar2(30) not null,
+web_date varchar2(10)not null,
+cookie NUMBER(5),
+hits number(5)
+);
+
+create table webtoon_customer
+(
+cus_id varchar2(30) not null primary key,
+num varchar2(30),
+mycookie number(5)  CHECK(mycookie >=0)
+);
+COMMIT;
+
+select * from webtoon_comic;
+select * from webtoon_customer;
+
+-- 웹툰 데이터 
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('A101','똑 닮은 딸','1화','이담','월',0);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('A102','똑 닮은 딸','2화','이담','월',0);
+insert into webtoon_comic(num,title, episode, name, web_date, cookie) 
+values ('A103','똑 닮은 딸','3화','이담','월',0);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('A104','똑 닮은 딸','4화','이담','월',2);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('A105','똑 닮은 딸','5화','이담','월',2);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('B111','평행도시','프롤로그','고다','일',0);
+insert into webtoon_comic(num,title, episode, name, web_date, cookie) 
+values ('B112','평행도시','1장(1)_이변','고다','일',0);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('C211','화산귀환','1화','LICO, 비가','수',0);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('C212','화산귀환','2화','LICO, 비가','수',0);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('C213','화산귀환','3화','LICO, 비가','수',2);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('D101','나를 바꿔줘','[시즌2]라임향 1','이지호, 호띠','토',0);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('D102','나를 바꿔줘','[시즌2]라임향 2','이지호, 호띠','토',2);
+insert into webtoon_comic (num,title, episode, name, web_date, cookie) 
+values ('D103','나를 바꿔줘','[시즌2]라임향 3','이지호, 호띠','토',2);
+
+-- 고객데이터
+insert into webtoon_customer (cus_id,mycookie) 
+values ('A001', 43);
+insert into webtoon_customer (cus_id,mycookie) 
+values ('B001', 0);
+insert into webtoon_customer (cus_id,mycookie) 
+values ('C001', 3);
+insert into webtoon_customer (cus_id,mycookie) 
+values ('D001', 9);
+insert into webtoon_customer (cus_id,mycookie) 
+values ('E001', 16);
+
+commit;
+
+drop table webtoon_customer;
+-- 웹툰 리스트
+select * from WEBTOON_COMIC;
+-- 일요일 웹툰 리스트
+select * from WEBTOON_COMIC where WEB_DATE like '%일%';
+-- 고객이 웹툰을 봄
+select * from WEBTOON_CUSTOMER;
+update webtoon_customer 
+set num = (select num from webtoon_comic where title ='똑 닮은 딸' and episode = '3화'),
+      mycookie = mycookie -  
+                (select cookie from webtoon_comic where title ='똑 닮은 딸' and episode = '3화')
+where cus_id = 'A001';
+select * from WEBTOON_CUSTOMER;
