@@ -727,7 +727,13 @@ on a.deptno1=d.deptno;
      
      select * from student;
      
-     
+     select *
+from student a
+join (
+select deptno1 , max(height)
+from student
+group by deptno1) b
+on a.deptno1=b.deptno1;
      
      select * from(     
      
@@ -800,6 +806,16 @@ on a.deptno1=d.deptno;
              group by  deptno1,  d.dname) a
        join student b
        on a.deptno1  = b.deptno1 and a.maxheight  = b.height;
+       
+       
+select *
+from student a
+join (
+select deptno1 , max(height)
+from student
+group by deptno1) b
+on a.deptno1=b.deptno1;
+       
       
     
     --4
