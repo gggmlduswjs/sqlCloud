@@ -1,0 +1,23 @@
+SELECT d.deptno,
+       d.dname,
+       LISTAGG(e.ename, ', ') WITHIN GROUP (ORDER BY e.ename) AS emp_names
+FROM dept d
+LEFT JOIN emp e ON d.deptno = e.deptno
+GROUP BY d.deptno, d.dname
+ORDER BY d.deptno;
+
+
+SELECT d.deptno,
+       d.dname       
+FROM dept d
+LEFT JOIN emp e ON d.deptno = e.deptno
+GROUP BY d.deptno, d.dname
+ORDER BY d.deptno;
+
+
+SELECT d.deptno,
+       d.dname  ,
+       e.ename
+FROM dept d
+LEFT JOIN emp e ON d.deptno = e.deptno
+ 

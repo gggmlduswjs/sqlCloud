@@ -778,6 +778,15 @@ SELECT * FROM department;
         join student b
         on a.grade = b.grade   and b.height > a.avg_height ;
         
+        select b.grade, b.name, b.height, a.avg_height
+from ( 
+select grade , avg(height) avg_height
+from student
+group by grade) a
+join student b
+on a.grade=b.grade and b.height >a.avg_height
+order by 1;
+        
           
      
       -- on  :   조인의 조건
@@ -792,6 +801,9 @@ SELECT * FROM department;
   
    --where 뒤에 오는 서브쿼리  페이지 432
    --다중행 서브쿼리 
+   select * from emp2;
+   select * from dept2;
+   
    select  empno, name, deptno 
    from emp2
    where  deptno  in (  select dcode from dept2 where  area='Pohang Main Office');

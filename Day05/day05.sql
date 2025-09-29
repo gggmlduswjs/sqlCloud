@@ -669,6 +669,14 @@ from student;
 select grade , avg(height)
 from student
 group by grade;
+--
+select *
+from ( 
+select grade , avg(height)
+from student
+group by grade);
+
+
 
 --1학년중 평균값보다 큰 친구
 
@@ -680,6 +688,14 @@ group by grade) a
 join student b
 on a.grade=b.grade
 ;
+
+select b.grade, b.name, b.height
+from ( 
+select grade , avg(height)
+from student
+group by grade) a
+join student b
+on a.grade=b.grade;
 
 select *
         from (select grade, avg(height) avg_height
